@@ -1,0 +1,18 @@
+<van-dialog
+  use-slot
+  title="{{language.str1}}"
+  show="{{ show }}"
+  z-index="5000"
+  show-cancel-button
+  confirm-button-text="{{language.str2}}"
+  cancel-button-text="{{language.str3}}"
+  bind:cancel="onClose"
+  bind:close="onClose"
+  bind:confirm="sendMsg"
+  async-close="{{true}}"
+  transition="fade"
+>
+  <view class="send-input">
+       <input type='text' cursor-spacing="100" class="send-input-text" focus="{{focus}}" value="{{val}}" data-name="val" bindinput="bindDataChange" placeholder='{{language.str4}}' placeholder-class='place-input'></input>
+  </view>
+</van-dialog>

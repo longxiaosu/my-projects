@@ -1,0 +1,121 @@
+<!-- <nav-bar navbar-data='{{nvabarData}}'></nav-bar> -->
+<!-- <view style='height: {{topHeight}}px;' class="top-fill"></view>
+<view style='height: {{topHeight}}px;background:#2DC998'></view> -->
+<go-top is-show='{{showGoTop}}'></go-top>
+<block wx:if="{{showPage == 0}}">
+    <view style="height:{{calc+'rpx'}};" class="fake-bg">
+        <view class="top-title">欢迎使用FFJ,登录后可查询FFJ信息</view>
+        <view class="input-content">
+            <form reportSubmit="true" bindsubmit="bindEmail2">
+                <view class="input-box">
+                    <icon class='iconfont icon-youxiang'></icon>
+                    <input type='text' cursor-spacing="50" class="form-input-text" placeholder='请输入帐号' name="account" placeholder-class='place-input'></input>
+                </view>
+                <view class="input-box">
+                    <icon class='iconfont icon-mima'></icon>
+                    <input type='text' cursor-spacing="50" password="{{true}}" class="form-input-text" placeholder='请输入密码' name="passWord" placeholder-class='place-input'></input>
+                </view>
+                <button class="menu-btn save-btn" formType="submit">
+                    <text>登录</text>
+                </button>
+            </form>
+        </view>
+    </view>
+</block>
+<block wx:if="{{showPage != 0&&showPage != 6}}">
+    <view class="{{showScreenBar == false?'':'hiddens'}}" style="height:{{showScreenBar == false?'auto': calc+'rpx'}};">
+        <form reportSubmit="true" bindsubmit="shareSubmit">
+            <view class="top-search-box">
+                <view class="logo-text">FFJ</view>
+                <button formType="submit" class="search-btn" catch:tap="linkToSearch">
+                    <icon class='iconfont icon-wenhao'></icon>
+                    <text>{{language.str1}}</text>
+                </button>
+            </view>
+            <view class="screen-bar">
+                <view class="screen-btn {{screenBarType==1? showScreenBar == true?'screen-btn-active':'':''}}" catch:tap="changeScreenBar" data-id="1">
+                    <text class="sreen-title">{{jobTypeName}}</text>
+                    <icon class='iconfont icon-xiala'></icon>
+                </view>
+                <view class="screen-btn {{screenBarType==2? showScreenBar == true?'screen-btn-active':'':''}}" catch:tap="changeScreenBar" data-id="2">
+                    <text class="sreen-title">{{language.str3}}</text>
+                    <icon class='iconfont icon-xiala'></icon>
+                </view>
+                <!-- 工作分类选项 -->
+                <view hidden="{{screenBarType != 1 || showScreenBar == false}}" class="screen-page" style="height:{{winHeight-340}}rpx;">
+                    <scroll-view scroll-y='true' class="screen-page-scroll">
+                        <view class="screen-page-box">
+                            <!-- 行業領域 -->
+                            <view class="cl-option-title">{{language.str7}}</view>
+                            <view class="cl-options-box">
+                                <view wx:for="{{jobTypes}}" wx:key="id" catch:tap="changeOptionsData" data-name="jobTypeId" data-type="{{item.id}}" class="cl-options-item {{item.id == optionsData.jobTypeId?'item-active':''}}">
+                                    {{item.name}}
+                                </view>
+                            </view>
+                        </view>
+                    </scroll-view>
+                </view>
+                <!-- 要求选项 -->
+                <view hidden="{{screenBarType != 2 || showScreenBar == false}}" class="screen-page" style="height:{{winHeight-340}}rpx;">
+                    <scroll-view scroll-y='true' class="screen-page-scroll">
+                        <view class="screen-page-box">
+                            <!-- 排序方式 -->
+                            <view class="cl-option-title">{{language.str8}}</view>
+                            <view class="cl-options-box">
+                                <view catch:tap="changeOptionsData" data-name="sortType" data-type="0" class="cl-options-item {{optionsData.sortType == 0?'item-active':''}}">
+                                    {{language.str20}}
+                                </view>
+                                <view catch:tap="changeOptionsData" data-name="sortType" data-type="1" class="cl-options-item {{optionsData.sortType == 1?'item-active':''}}">
+                                    {{language.str10}}
+                                </view>
+                            </view>
+                            <!-- 工作性质 -->
+                            <view class="cl-option-title">{{language.str11}}</view>
+                            <view class="cl-options-box">
+                                <view catch:tap="changeOptionsData" data-name="careerType" data-type="0" class="cl-options-item {{optionsData.careerType == 0?'item-active':''}}">
+                                    {{language.str12}}
+                                </view>
+                                <view catch:tap="changeOptionsData" data-name="careerType" data-type="1" class="cl-options-item {{optionsData.careerType == 1?'item-active':''}}">
+                                    {{language.str13}}
+                                </view>
+                                <view catch:tap="changeOptionsData" data-name="careerType" data-type="2" class="cl-options-item {{optionsData.careerType == 2?'item-active':''}}">
+                                    {{language.str14}}
+                                </view>
+                            </view>
+                            <!-- 月薪范围 -->
+                            <view class="cl-option-title">{{language.str15}}</view>
+                            <view class="cl-options-box">
+                                <view wx:for="{{salaryRanges}}" wx:key="type" catch:tap="changeOptionsData" data-name="salaryType" data-type="{{item.type}}" class="cl-options-item {{item.type == optionsData.salaryType?'item-active':''}}">
+                                    {{item.name}}
+                                </view>
+                            </view>
+                        </view>
+                    </scroll-view>
+                    <view class="screen-menu-btn">
+                        <!-- 重置 -->
+                        <button formType="submit" catch:tap="setOptionsDefault" class="cl-btn">
+                            {{language.str16}}
+                        </button>
+                        <!-- 确定 -->
+                        <button formType="submit" catch:tap="searchOptions" class="cl-btn cl-check">
+                            {{language.str17}}
+                        </button>
+                    </view>
+                </view>
+            </view>
+            <view style="min-height:{{winHeight}}rpx;background:#fff;">
+                <!-- 工作列表 -->
+                <job-list list="{{list}}"></job-list>
+                <view class="hideLoad">
+                    <!-- 已经全部加载 -->
+                    <text wx:if='{{!hideLoad&&total!=0}}'>{{language.str4}}</text>
+                    <!-- 加载中 -->
+                    <text wx:else>{{isBottomRefreshing == true ? language.str5:''}}</text>
+                    <!-- 暂无内容 -->
+                    <text wx:if="{{total == 0}}">{{language.str18}}</text>
+                </view>
+            </view>
+        </form>
+        <view hidden="{{showScreenBar == false}}" class="background-box" catch:tap="closeScreenBar" catchtouchmove="preSlide"></view>
+    </view>
+</block>

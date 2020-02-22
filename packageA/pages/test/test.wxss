@@ -1,0 +1,8 @@
+page {
+    background: #EEEDED;
+}
+
+view {
+    box-sizing: border-box;
+}
+

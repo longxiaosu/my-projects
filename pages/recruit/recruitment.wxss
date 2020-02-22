@@ -1,0 +1,77 @@
+page {
+    background: #fff;
+}
+
+view {
+    box-sizing: border-box;
+}
+
+.menu-btn {
+    height: auto;
+    line-height: normal;
+    background: none;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.menu-btn::after {
+    border: none;
+}
+
+.job-day-item {
+    display: flex;
+    flex-direction: column;
+    padding: 30rpx 0 15rpx;
+    border-bottom: 1px solid #F1F1F1;
+    animation: fadeIn 0.5s 1;
+}
+
+.activity-img {
+    margin: 0 auto;
+    width: 90%;
+    border-radius: 5px;
+}
+
+.job-day-title {
+    padding: 20rpx 30rpx;
+    font-size: 32rpx;
+    color: #141414;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+
+.job-day-content {
+    padding: 0rpx 30rpx;
+    font-size: 28rpx;
+    color: #7B7A7A;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.job-day-bottom {
+    padding: 0rpx 30rpx;
+    margin-top: 40rpx;
+    display: flex;
+    align-items: center;
+    font-size: 26rpx;
+    color: #999;
+}
+
+.job-day-bottom text {
+    flex: 1;
+}
+
+.job-day-bottom .iconfont {
+    display: flex;
+    align-items: center;
+    font-size: 46rpx;
+    color: #4A4A4A;
+    margin-left: 30rpx;
+}

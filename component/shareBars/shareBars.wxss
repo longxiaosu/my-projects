@@ -1,0 +1,65 @@
+@import "../../style/iconfont.wxss";
+
+.menu-btn {
+  height: auto;
+  line-height: normal;
+  background: none;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-btn::after {
+  border: none;
+}
+
+.share-box {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.share-item {
+  display: flex;
+  align-items: center;
+  height: 130rpx;
+  padding: 0 25rpx;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.friends-img {
+  width: 80rpx;
+  height: 80rpx;
+  flex-shrink: 0;
+}
+
+.shares-text {
+  flex: 1;
+  font-size: 28rpx;
+  letter-spacing: 1px;
+  color: #000;
+  display: flex;
+  align-items: center;
+  padding: 0 20rpx;
+}
+
+.share-item .icon-you {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 26rpx;
+  color: #C8C8C8;
+}
+
+
+.cancel-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28rpx;
+  letter-spacing: 1px;
+  color: #000;
+  height: 100rpx;
+}

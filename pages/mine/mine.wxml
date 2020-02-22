@@ -1,0 +1,58 @@
+<nav-bar navbar-data='{{nvabarData}}'></nav-bar>
+<view style='height: {{topHeight}}px'></view>
+<login-panel show="{{loginShow}}" bind:close="closeLogin"></login-panel>
+<form reportSubmit="true" bindsubmit="shareSubmit">
+    <view class="userInfo-box">
+        <view wx:if="{{userInfo.userInfo.userId == ''}}" class="login-box">
+            <button bindgetuserinfo="getUserInfo" openType="getUserInfo" class="login-btns">
+                {{language.str1}}
+            </button>
+            <text>{{language.str2}}</text>
+        </view>
+        <text wx:else class="user-name">{{userInfo.userInfo.nickname}}</text>
+        <image mode="aspectFill" src='{{userInfo.userInfo.avatarUrl}}'></image>
+    </view>
+    <!-- 简历 -->
+    <button formType="submit" class="menu-item bor-b" catch:tap="linkToPage" data-url="/packageA/pages/resume/resume">
+        <icon class='iconfont icon-jianli'></icon>
+        <text>{{language.str3}}</text>
+        <icon class='iconfont icon-you'></icon>
+    </button>
+    <!-- 投递记录 -->
+    <button formType="submit" class="menu-item bor-b" catch:tap="linkToPage" data-url="/packageA/pages/myApplication/myApplication">
+        <icon class='iconfont icon-jilu'></icon>
+        <text>{{language.str4}}</text>
+        <icon class='iconfont icon-you'></icon>
+        <view wx:if="{{applyNum!=''&&applyNum!=0}}" class="apply-num">{{applyNum}}</view>
+    </button>
+    <!-- 隐私设置 -->
+    <button formType="submit" class="menu-item bor-b" catch:tap="linkToPage" data-url="/packageA/pages/edit/editPrivacy/editPrivacy">
+        <icon class='iconfont icon-yinsi'></icon>
+        <text>{{language.str5}}</text>
+        <icon class='iconfont icon-you'></icon>
+    </button>
+    <!-- 意见反馈 -->
+    <button formType="submit" class="menu-item bor-b" open-type="feedback">
+        <icon class='iconfont icon-fankui'></icon>
+        <text>{{language.str6}}</text>
+        <icon class='iconfont icon-you'></icon>
+    </button>
+    <!-- 切换语言 -->
+    <button formType="submit" class="menu-item {{userInfo.userInfo.userId == ''?'':'bor-b'}}" catch:tap="changeLanguage">
+        <icon class='iconfont icon-Font_Linear'></icon>
+        <text>{{language.str7}}</text>
+        <icon class='iconfont icon-you'></icon>
+    </button>
+    <!-- 退出登录 -->
+    <button wx:if="{{userInfo.userInfo.userId != ''}}" formType="submit" class="menu-item" catch:tap="loginOut">
+        <icon class='iconfont icon-tuichudenglu'></icon>
+        <text>{{language.str8}}</text>
+        <icon class='iconfont icon-you'></icon>
+    </button>
+    <!-- <button formType="submit"class="change-btn" catch:tap="linkOthersWe">{{language.str9}}</button> -->
+    <!-- <button formType="submit" class="menu-item bor-b">
+        <icon class='iconfont icon-shoucang'></icon>
+        <text>職位收藏</text>
+        <icon class='iconfont icon-you'></icon>
+    </button> -->
+</form>

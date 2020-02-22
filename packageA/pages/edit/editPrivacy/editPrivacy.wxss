@@ -1,0 +1,56 @@
+page {
+    background: #FFFFFF;
+}
+
+view {
+    box-sizing: border-box;
+}
+
+.menu-btn {
+    height: auto;
+    line-height: normal;
+    background: none;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-btn::after {
+    border: none;
+}
+
+.form-input-box {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    padding: 0 25rpx;
+}
+
+.form-input-item {
+    display: flex;
+}
+
+.form-input-title {
+    height: 100rpx;
+    line-height: 100rpx;
+    min-width: 200rpx;
+    flex-shrink: 0;
+    font-size: 28rpx;
+    color: #333333;
+    letter-spacing: 1px;
+}
+
+.form-input-text {
+    flex: 1;
+    font-size: 28rpx;
+    text-align: right;
+    height: 100rpx;
+    line-height: 100rpx;
+    color: #999999;
+    min-width: 0;
+}
+
+.switch {
+    zoom: 0.8;
+}

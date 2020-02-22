@@ -1,0 +1,145 @@
+page {
+    background: #FBFAFA;
+}
+
+view {
+    box-sizing: border-box;
+}
+
+.userInfo-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30rpx;
+    height: 240rpx;
+    background: #fff;
+    margin-bottom: 20rpx;
+}
+
+.userInfo-box .user-name {
+    flex: 1;
+    font-size: 46rpx;
+    color: #323232;
+    font-weight: bold;
+    padding-right: 30rpx;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.userInfo-box .login-box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 30rpx;
+}
+
+.login-btns {
+    border-radius: 0;
+    border: none;
+    background: none;
+    flex: 1;
+    font-size: 46rpx;
+    color: #323232;
+    font-weight: bold;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    line-height: normal;
+    height: auto;
+    letter-spacing: 1px;
+}
+
+.login-btns::after {
+    border: none;
+}
+
+.login-box text {
+    font-size: 28rpx;
+    color: #5E5E5E;
+    letter-spacing: 1px;
+}
+
+.userInfo-box image {
+    width: 140rpx;
+    height: 140rpx;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 0;
+    border: none;
+    line-height: normal;
+    height: 100rpx;
+    padding: 0 30rpx;
+}
+
+.menu-item::after {
+    border: none;
+}
+
+.menu-item .iconfont {
+    display: flex;
+    align-items: center;
+    font-size: 42rpx;
+    color: #636363;
+    margin-right: 30rpx;
+}
+
+.menu-item text {
+    flex: 1;
+    font-size: 30rpx;
+    color: #353534;
+    letter-spacing: 1px;
+    text-align: left;
+}
+
+.menu-item .icon-you {
+    font-size: 26rpx;
+    color: #C8C8C8;
+    margin-right: 0;
+    font-weight: normal;
+}
+
+.bor-b {
+    border-bottom: 1px solid #F1F1F1;
+}
+
+.change-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20rpx 0 50rpx;
+    height: 100rpx;
+    font-size: 30rpx;
+    color: #515151;
+    background: #fff;
+    border-radius: 0;
+    border: none;
+    line-height: normal;
+}
+
+.change-btn::after {
+    border: none;
+}
+
+.apply-num {
+    position: absolute;
+    background-color: #f56c6c;
+    border-radius: 20rpx;
+    color: #fff;
+    display: inline-block;
+    font-size: 24rpx;
+    height: 36rpx;
+    line-height: 36rpx;
+    padding: 0 12rpx;
+    text-align: center;
+    white-space: nowrap;
+    top: 18rpx;
+    left: 220rpx;
+}

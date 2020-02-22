@@ -1,0 +1,62 @@
+<nav-bar navbar-data='{{nvabarData}}'></nav-bar>
+<view style='height: {{topHeight}}px'></view>
+<block wx:if="{{detail != null}}">
+    <view class="company-banner ripple fadeInDown">
+        <image mode="widthFix" class="banner-img" src="{{detail.logo}}" lazy-load></image>
+    </view>
+    <view class="info-box ripple fadeInRight">
+        <!-- 普通公司主页 -->
+        <block wx:if="{{detail.vip == false}}">
+            <view class="company-chinese">{{detail.chineseName}}</view>
+            <view class="company-foreign">{{detail.foreignName}}</view>
+            <!-- 公司簡介 -->
+            <view class="company-data-title mrt">{{language.str4}}</view>
+            <text class="company-data-info" selectable>{{detail.description}}</text>
+            <!-- 地址 -->
+            <view class="company-data-title mrt">{{language.str5}}</view>
+            <text class="company-data-info" selectable>{{detail.address}}</text>
+            <!-- 电话 -->
+            <view class="company-data-title mrt">{{language.str6}}</view>
+            <text class="company-data-info" selectable>{{detail.phone}}</text>
+        </block>
+        <!-- VIP公司 -->
+        <block wx:if="{{detail.vip == true}}">
+            <!-- 公司简介 -->
+            <view class="company-vip-desc">{{detail.vipContent.description}}</view>
+            <view class="hrs"></view>
+            <view class="company-vip-desc">
+                <rich-text nodes="{{detail.vipContent.detail}}"></rich-text>
+            </view>
+            <view class="hrs"></view>
+            <view class="fast-info">
+                <text>{{detail.vipContent.name}}</text>
+                at fastfindjob.com
+            </view>
+            <view wx:if="{{detail.vipContent.photos.length>0}}" class="vip-img-box">
+                <image mode="widthFix" class="vip-img-1" src="{{detail.vipContent.photos[0]}}" lazy-load></image>
+            </view>
+            <view wx:if="{{detail.vipContent.photos.length>2}}" class="vip-img-box">
+                <image mode="aspectFill" class="vip-img-2" src="{{detail.vipContent.photos[1]}}" lazy-load></image>
+                <image mode="aspectFill" class="vip-img-3" src="{{detail.vipContent.photos[2]}}" lazy-load></image>
+            </view>
+        </block>
+        <!-- 信息 -->
+        <view class="company-data-title mrt mrb">{{language.str7}}</view>
+        <view wx:for="{{detail.jobs}}" wx:key="jobId" class="job-item" catch:tap="linkToJobDetail" data-id="{{item.jobId}}">
+            <view class="item-title-data">
+                <text class="jobs-name">{{item.jobTitle}}</text>
+                [
+                <text class="job-address">{{item.workLocation}}</text>
+                ]
+                <text class="job-money">{{item.salaryStr}}</text>
+            </view>
+            <view class="item-other-data">
+                <view class="company-type-item">{{item.jobTypeDesc}}</view>
+                <view class="job-publish-time">{{language.str8}}{{item.gmtModified}}</view>
+            </view>
+        </view>
+        <view wx:if="{{detail.jobs.length == 0}}" class="no-job-tips">{{language.str9}}</view>
+    </view>
+</block>
+<view class="fill-bottom"></view>
+<go-top is-show='{{showGoTop}}'></go-top>

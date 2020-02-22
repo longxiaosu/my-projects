@@ -1,0 +1,63 @@
+@font-face {
+  font-family: 'iconfont';  /* project id 1287896 */
+  src: url('//at.alicdn.com/t/font_1287896_1cv5n6kr1w2.eot');
+  src: url('//at.alicdn.com/t/font_1287896_1cv5n6kr1w2.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_1287896_1cv5n6kr1w2.woff2') format('woff2'),
+  url('//at.alicdn.com/t/font_1287896_1cv5n6kr1w2.woff') format('woff'),
+  url('//at.alicdn.com/t/font_1287896_1cv5n6kr1w2.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_1287896_1cv5n6kr1w2.svg#iconfont') format('svg');
+}
+
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-you:before {content: '\e627';}
+.icon-fanhui:before {content: '\e65c';}
+.icon-wenhao:before {content: '\e638';}
+.icon-xiala:before {content: '\e615';}
+.icon-shangla:before {content: '\e6a8';}
+.icon-jianli:before {content: '\e67d';}
+.icon-jilu:before {content: '\e639';}
+.icon-shoucang:before {content: '\e6a7';}
+.icon-fankui:before {content: '\e658';}
+.icon-yinsi:before {content: '\e65b';}
+.icon-chuansong:before {content: '\e64c';}
+.icon-dingyue:before {content: '\e610';}
+.icon-qingchu:before {content: '\e616';}
+.icon-shanchu:before {content: '\e608';}
+.icon-xiazai10:before {content: '\e60a';}
+.icon-edit:before {content: '\e62c';}
+.icon-tianjia:before {content: '\e614';}
+.icon-iconfontweixin:before {content: '\e636';}
+.icon-guanbi1:before {content: '\e606';}
+.icon-tuichudenglu:before {content: '\e61e';}
+.icon-Font_Linear:before {content: '\e678';}
+.icon-shengri:before {content: '\e619';}
+.icon-iconphone:before {content: '\e768';}
+.icon-weixin:before {content: '\e628';}
+.icon-weizhi:before {content: '\e618';}
+.icon-gongwenbao:before {content: '\e6ba';}
+.icon-biaoqing1:before {content: '\e672';}
+.icon-jiahao:before {content: '\e6b2';}
+.icon-youxiang:before {content: '\e631';}
+.icon-mima:before {content: '\e660';}
+.icon-scrm-app-icon_huabanfuben:before {content: '\e630';} 
+.icon-paishe:before {content: '\e671';}
+.icon-Italktubiaozhuanqu:before {content: '\e609';}
+.icon-weizhi1:before {content: '\e601';}
+.icon-zhaopian:before {content: '\e61f';}
+.icon-hongbao:before {content: '\e7c9';}
+.icon-yuyinshuru:before {content: '\e65a';}
+.icon-yuyintonghua:before {content: '\e659';}
+.icon-shoucang1:before {content: '\e604';}
+.icon-changyongyu:before {content: '\e677';}
+
+
+

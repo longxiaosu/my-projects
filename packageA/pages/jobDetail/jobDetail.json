@@ -1,0 +1,11 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "nav-bar": "/component/navbarNew/index",
+    "login-panel": "/component/loginPanel/loginPanel",
+    "apply-job": "/component/applyJob/applyJob",
+    "send-msg": "/component/sendMsg/sendMsg",
+    "share-bars": "/component/shareBars/shareBars",
+    "share-img": "/component/shareImg/shareImg"
+  }
+}

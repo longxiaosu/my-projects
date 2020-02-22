@@ -1,0 +1,159 @@
+page {
+    background: #EEEDED;
+}
+
+view {
+    box-sizing: border-box;
+}
+
+
+.menu-btn {
+    height: auto;
+    line-height: normal;
+    background: none;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-btn::after {
+    border: none;
+}
+
+.job-item {
+    display: flex;
+    padding: 25rpx 20rpx;
+    background: #fff;
+    border-bottom: 1px solid #F2F2F3;
+    animation: fadeIn 0.5s 1;
+}
+
+.company-img {
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 3px;
+}
+
+.job-detail {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0 20rpx;
+    overflow: hidden;
+}
+
+.company-name {
+    font-size: 32rpx;
+    color: #333333;
+    max-width: 400rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.job-name {
+    font-size: 26rpx;
+    color: #787878;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+.job-name .iconfont {
+    display: flex;
+    align-items: center;
+    font-size: 30rpx;
+    justify-content: flex-start;
+    color: #787878;
+    margin-right: 10rpx;
+    flex-shrink: 0;
+}
+
+.job-status {
+    font-size: 26rpx;
+    color: #A7A7A7;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    margin-top: 16rpx;
+}
+
+.job-status .iconfont {
+    display: flex;
+    align-items: center;
+    font-size: 34rpx;
+    justify-content: flex-start;
+    color: #A7A7A7;
+    margin-right: 10rpx;
+    flex-shrink: 0;
+}
+
+.job-status text {
+    position: relative;
+    padding-right: 8rpx;
+}
+
+.job-status text+text {
+    padding-left: 8rpx;
+    border-left: 1px solid #EDF0EF;
+}
+
+.job-name text,
+.job-status text {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.job-status text {
+    color: #FD5F39; 
+    font-size: 30rpx;
+}
+
+.menu-box {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 25rpx;
+    background: #fff;
+    padding: 20rpx 0;
+    border-top: 1px solid #EEEDED;
+}
+
+.fill-line {
+    margin-bottom: 25rpx;
+}
+
+.main-btn {
+    margin-right: 30rpx;
+    color: #fff;
+    background-color: #1989fa;
+    border: 1px solid #1989fa;
+    font-size: 24rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    line-height: 56rpx;
+    letter-spacing: 0.6px;
+    padding: 0 25rpx;
+    min-width: 140rpx;
+}
+
+.main-btn-hover {
+    background: #177CE1 !important;
+}
+
+.reject {
+    color: #fff;
+    background-color: #ee0a24;
+    border: 1px solid #ee0a24;
+}
+
+.reject-hover {
+    background: #D70920 !important
+}

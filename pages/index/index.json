@@ -1,0 +1,14 @@
+{
+  "disableSwipeBack": true,
+  "enablePullDownRefresh": true,
+  "backgroundColor": "#fff",
+  "backgroundTextStyle": "dark",
+  "navigationBarBackgroundColor":"#2DC998",
+  "navigationBarTitleText":"",
+  "navigationStyle": "default",
+  "backgroundColorTop":"#2DC998",
+  "usingComponents": {
+    "go-top": "/component/goTop/go-top",
+    "job-list": "/component/jobList/jobList"
+  }
+}

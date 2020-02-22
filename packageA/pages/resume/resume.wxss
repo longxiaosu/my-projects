@@ -1,0 +1,272 @@
+page {
+    background: #F2F5F5;
+}
+
+view {
+    box-sizing: border-box;
+}
+
+.menu-btn {
+    height: auto;
+    line-height: normal;
+    background: none;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-btn::after {
+    border: none;
+}
+
+.mr-t {
+    margin-top: 22rpx;
+}
+
+.save-btn {
+    width: 80%;
+    margin: 60rpx auto 100rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    background: #16B38A;
+    color: #fff;
+    letter-spacing: 1.5px;
+    font-size: 30rpx;
+    height: 80rpx;
+}
+
+.basic-info {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    padding: 20rpx 25rpx;
+}
+
+.basic-user {
+    display: flex;
+    align-items: center;
+    padding: 10rpx 0;
+    position: relative;
+}
+
+.basic-username {
+    flex: 1;
+    padding-right: 20rpx;
+}
+
+.ch-name {
+    display: flex;
+    align-items: center;
+}
+
+.ch-name text {
+    display: flex;
+    align-items: center;
+    font-size: 42rpx;
+    font-weight: bold;
+    letter-spacing: 1px;
+    max-width: 400rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.ch-name button {
+    display: flex;
+    align-items: center;
+    color: #16B38A;
+    font-size: 28rpx;
+    letter-spacing: 1px;
+    margin-left: 15rpx;
+}
+
+.ch-name button .iconfont {
+    display: flex;
+    align-items: center;
+    font-size: 36rpx;
+    margin-right: 5rpx;
+}
+
+.foreign-name {
+    font-size: 30rpx;
+    color: #000;
+    line-height: 50rpx;
+}
+
+.avatar-img {
+    width: 140rpx;
+    height: 140rpx;
+    border-radius: 50%;
+    flex-sbasic-infohrink: 0;
+}
+
+.gender-img {
+    width: 40rpx;
+    height: 40rpx;
+    margin-left: 10rpx;
+}
+
+.basic-item {
+    display: flex;
+    align-items: center;
+    color: #323232;
+    font-size: 28rpx;
+    padding: 10rpx 0;
+    line-height: 40rpx;
+}
+
+.basic-item .iconfont {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 36rpx;
+    color: #323232;
+    margin-right: 20rpx;
+}
+
+
+.add-item {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    min-height: 100rpx;
+}
+
+.add-item .iconfont {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32rpx;
+    color: #16B38A;
+    font-weight: bold;
+}
+
+.add-item text {
+    font-size: 30rpx;
+    letter-spacing: 1px;
+    color: #000;
+    margin-left: 16rpx;
+}
+
+.add-item .icon-edit {
+    font-weight: normal;
+}
+
+.desc-box {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+}
+
+.desc-title {
+    display: flex;
+    align-items: center;
+    min-height: 100rpx;
+    padding: 0 25rpx;
+}
+
+.desc-title text {
+    flex: 1;
+    font-size: 30rpx;
+    color: #000;
+    letter-spacing: 1px;
+}
+
+.edit-item {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    padding: 0rpx 0 10rpx 20rpx;
+    font-size: 26rpx;
+    color: #16B38A;
+}
+
+.desc-content {
+    font-size: 26rpx;
+    color: #999999;
+    letter-spacing: 0.8px;
+    padding: 0 25rpx 30rpx;
+}
+
+.bor-b {
+    border-bottom: 1px solid #F5F4F4;
+}
+
+.name-title {
+    min-height: auto;
+    margin-top: 30rpx;
+}
+
+.name-desc {
+    display: flex;
+    padding: 0 25rpx;
+    align-items: flex-start;
+    min-height: 50rpx;
+}
+
+.name-desc text {
+    flex: 1;
+    font-size: 28rpx;
+    letter-spacing: 1px;
+    color: #000;
+    font-weight: bold;
+    padding-right: 20rpx;
+}
+
+.name-address {
+    padding: 0 25rpx;
+    font-size: 26rpx;
+    color: #999999;
+    letter-spacing: 1px;
+}
+
+.name-times {
+    font-size: 24rpx;
+}
+
+.name-detail {
+    min-height: 60rpx;
+}
+
+.name-detail text {
+    font-size: 28rpx;
+}
+
+.form-input-item {
+    display: flex;
+}
+
+.form-input-title {
+    height: 100rpx;
+    line-height: 100rpx;
+    min-width: 200rpx;
+    flex-shrink: 0;
+    font-size: 28rpx;
+    color: #333333;
+    letter-spacing: 1px;
+}
+
+.form-input-text {
+    flex: 1;
+    font-size: 28rpx;
+    text-align: right;
+    height: 100rpx;
+    line-height: 100rpx;
+    color: #999999;
+    min-width: 0;
+}
+
+.form-input-item .icon-you {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 28rpx;
+    color: #D8D8D8;
+    flex-shrink: 0;
+    width: 50rpx;
+}

@@ -1,0 +1,228 @@
+page {
+    background: #FFFFFF;
+}
+
+view {
+    box-sizing: border-box;
+}
+
+.gray-line {
+    height: 22rpx;
+    background: #F6F5F5;
+}
+
+.menu-btn {
+    height: auto;
+    line-height: normal;
+    background: none;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-btn::after {
+    border: none;
+}
+
+.mine-desc {
+    display: flex;
+    align-items: center;
+    background: #F6F5F5;
+    font-size: 28rpx;
+    color: #999999;
+    letter-spacing: 1px;
+    height: 80rpx;
+    padding: 0 25rpx;
+}
+
+.text-area-box {
+    padding: 25rpx;
+    background: #FFFFFF;
+    color: #999999;
+    border-bottom: 1px solid #F0EFEF;
+    display: flex;
+}
+
+.text-area-box textarea {
+    width: 100%;
+    height: 300rpx;
+    box-sizing: border-box;
+    font-size: 26rpx;
+    color: #999999;
+}
+
+.save-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32rpx;
+    letter-spacing: 2px;
+    color: #fff;
+    background: #16B38A;
+    border-radius: 5px;
+    width: 80%;
+    height: 88rpx;
+    margin: 100rpx auto 0;
+}
+
+.del-btn {
+    background: #F56C6C;
+    margin-top: 60rpx;
+}
+
+.form-input-box {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    padding: 0 25rpx;
+}
+
+.form-input-item {
+    display: flex;
+}
+
+.form-input-title {
+    height: 100rpx;
+    line-height: 100rpx;
+    min-width: 200rpx;
+    flex-shrink: 0;
+    font-size: 28rpx;
+    color: #333333;
+    letter-spacing: 1px;
+}
+
+.form-input-content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    font-size: 28rpx;
+    text-align: left;
+    min-height: 100rpx;
+    line-height: 60rpx;
+    color: #999999;
+    min-width: 0;
+}
+
+.form-input-text {
+    flex: 1;
+    font-size: 28rpx;
+    text-align: right;
+    height: 100rpx;
+    line-height: 100rpx;
+    color: #999999;
+    min-width: 0;
+}
+
+.form-input-item .icon-you {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 28rpx;
+    color: #D8D8D8;
+    flex-shrink: 0;
+    width: 50rpx;
+}
+
+.form-input-item .icon-shanchu {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 36rpx;
+    flex-shrink: 0;
+    width: 50rpx;
+}
+
+.fill-right {
+    flex-shrink: 0;
+    width: 50rpx;
+}
+
+.place-input {
+    color: #999999;
+}
+
+.border-b {
+    border-bottom: 1px solid #EFEEEE;
+}
+
+.add-item {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    min-height: 100rpx;
+}
+
+.add-item .iconfont {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32rpx;
+    color: #16B38A;
+    font-weight: bold;
+}
+
+.add-item text {
+    font-size: 30rpx;
+    letter-spacing: 1px;
+    color: #000;
+    margin-left: 16rpx;
+}
+
+.align-left {
+    text-align: left;
+}
+
+.bor-b {
+    border-bottom: 1px solid #F5F4F4;
+}
+
+.jobPosition-box {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+}
+
+.jobPosition-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100rpx;
+    font-size: 30rpx;
+    color: #333333;
+    letter-spacing: 1px;
+    flex-shrink: 0;
+}
+
+.jobPosition-scroll {
+    flex: 1;
+    overflow:auto;
+}
+
+.checkboxs {
+    padding: 30rpx;
+}
+
+.checkbox-item {
+    margin-bottom: 25rpx;
+}
+
+.checkbox-label {
+    font-size: 28rpx;
+}
+
+.select-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32rpx;
+    letter-spacing: 2px;
+    color: #fff;
+    background: #16B38A;
+    border-radius: 5px;
+    width: 80%;
+    height: 88rpx;
+    margin: 50rpx auto 30rpx;
+}

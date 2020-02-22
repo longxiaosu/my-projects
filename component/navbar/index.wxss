@@ -1,0 +1,205 @@
+@import "../../style/iconfont.wxss";
+
+.icon-youbian:before {
+  content: '\e613';
+  transform: rotate(90deg);
+}
+
+.icon-citys:before {
+  content: '\e6b4';
+}
+
+.icon-closeing:before {
+  content: '\e6d6';
+}
+
+/* 顶部要固定定位   标题要居中   自定义按钮和标题要和右边微信原生的胶囊上下对齐 */
+
+.nav-wrap {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background: #fff;
+  color: #000;
+  z-index: 9990;
+}
+
+/* 标题要居中 */
+
+.nav-title {
+  position: absolute;
+  text-align: center;
+  max-width: 400rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  font-size: 32rpx;
+  letter-spacing: 1px;
+  color: #2c2b2b;
+  font-weight: 600;
+}
+
+.nav-boxs {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  position: absolute;
+  left: 0;
+}
+
+.nav-capsule {
+  display: flex;
+  align-items: center;
+  margin-left: 30rpx;
+  width: 140rpx;
+  justify-content: space-between;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.navbar-v-line {
+  width: 1px;
+  height: 32rpx;
+  background-color: #e5e5e5;
+}
+
+.back-pre, .back-home {
+  width: 32rpx;
+  height: 32rpx;
+  margin-top: 4rpx;
+  padding: 10rpx;
+}
+
+.nav-capsule .back-home {
+  width: 36rpx;
+  height: 36rpx;
+  margin-top: 3rpx;
+}
+
+.linkMoney {
+  font-size: 28rpx;
+  color: #fff;
+  background-color: #f84b5e;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 140rpx;
+  height: 55rpx;
+  box-sizing: border-box;
+}
+
+.money {
+  width: 38rpx;
+  height: 38rpx;
+}
+
+.linkCity {
+  font-size: 26rpx;
+  color: #000;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 2rpx;
+  max-width: 140rpx;
+  height: 55rpx;
+  box-sizing: border-box;
+}
+
+.linkCity text {
+  max-width: 120rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.linkCity .icon-youbian {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 26rpx;
+  box-sizing: border-box;
+}
+
+.hover-btn {
+  background-color: #f1f1f1 !important;
+}
+
+.city-title {
+  position: relative;
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #000;
+  font-size: 30rpx;
+  text-align: center;
+  letter-spacing: 4rpx;
+}
+
+.city-title .icon-closeing {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 50rpx;
+  height: 80rpx;
+  right: 20rpx;
+  top: 0;
+  font-size: 36rpx;
+}
+
+.city-fill-bottom {
+  height: 400rpx;
+}
+
+.city-line {
+  height: 65rpx;
+  font-size: 24rpx;
+  letter-spacing: 4rpx;
+  display: flex;
+  align-items: center;
+  padding: 0 40rpx;
+  background-color: #ebebeb;
+  color: #b4b4b4;
+}
+
+.city-line icon {
+  color: #b4b4b4;
+  display: flex;
+  align-items: center;
+  margin-right: 20rpx;
+  font-size: 32rpx;
+}
+
+.city-list {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 18rpx;
+}
+
+.city-tiem {
+  width: 202rpx;
+  height: 70rpx;
+  margin: 18rpx;
+  font-size: 28rpx;
+  color: #000;
+  border: 1px solid #dedede;
+  border-radius: 10rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.select-city {
+  color: #51bbac !important;
+  border: 1px solid #51bbac !important;
+}

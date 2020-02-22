@@ -1,0 +1,30 @@
+@import "../../style/iconfont.wxss";
+
+view {
+    box-sizing: border-box;
+}
+
+.swiper-box {
+    width: 750rpx;
+    height: 400rpx;
+    padding-top: 20rpx;
+    box-sizing: border-box;
+}
+
+.emotion-menu {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.emotion-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 1 12.5%;
+    height: 100rpx;
+}
+
+.emotion-img {
+    width: 60rpx;
+    height: 60rpx;
+}

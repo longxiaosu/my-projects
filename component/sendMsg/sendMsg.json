@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "van-action-sheet": "/dist/action-sheet/index",
+    "van-dialog": "/dist/dialog/index"
+  }
+}

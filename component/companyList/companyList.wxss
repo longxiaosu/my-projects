@@ -1,0 +1,107 @@
+@import "../../style/iconfont.wxss";
+
+view {
+    box-sizing: border-box;
+}
+
+.job-item {
+    display: flex;
+    padding: 25rpx 20rpx;
+    background: #fff;
+    border-bottom: 1px solid #F2F2F3;
+    animation: fadeIn 0.5s 1;
+}
+
+.company-img {
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 3px;
+}
+
+.job-detail {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 120rpx;
+    padding: 0 20rpx;
+    overflow: hidden;
+}
+
+.job-name {
+    font-size: 30rpx;
+    color: #333333;
+    max-width: 400rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.company-name {
+    font-size: 26rpx;
+    color: #787878;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+.company-name .iconfont {
+    display: flex;
+    align-items: center;
+    font-size: 30rpx;
+    justify-content: flex-start;
+    color: #787878;
+    margin-right: 10rpx;
+    flex-shrink: 0;
+}
+
+.job-addr {
+    font-size: 26rpx;
+    color: #A7A7A7;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.job-addr .iconfont {
+    display: flex;
+    align-items: center;
+    font-size: 34rpx;
+    justify-content: flex-start;
+    color: #A7A7A7;
+    margin-right: 10rpx;
+    flex-shrink: 0;
+}
+
+.job-addr text {
+    position: relative;
+    padding-right: 8rpx;
+}
+
+.job-addr text+text {
+    padding-left: 8rpx;
+    border-left: 1px solid #EDF0EF;
+}
+
+.company-name text,
+.job-addr text {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.job-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-shrink: 0;
+    height: 120rpx;
+}
+
+.job-publish {
+    font-size: 24rpx;
+    color: #A7A7A7;
+}

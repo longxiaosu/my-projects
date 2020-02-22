@@ -1,0 +1,55 @@
+<view class='nav-wrap' style='height: {{ topHeight}}px;'>
+  <view class='nav-title' style='line-height: {{height*2 + 44}}px;'>{{navbarData.title}}</view>
+  <view class='nav-boxs'>
+    <view class='nav-capsule' style='height: {{height*2 + 25}}px;padding-top:19px;' wx:if='{{navbarData.showCapsule}}'>
+      <view bindtap='_navback' wx:if='{{!share}}'>
+        <image src='/assets/pngs/4x_navigation_black_back.png' mode='aspectFill' class='back-pre'></image>
+      </view>
+      <view class='navbar-v-line' wx:if='{{!share}}'></view>
+      <view bindtap='_backhome'>
+        <image src='/assets/pngs/4x_navigation_black_home.png' mode='aspectFill' class='back-home'></image>
+      </view>
+    </view>
+    <view class='nav-capsule' style='height: {{height*2 + 25}}px; padding-top:19px;' wx:if='{{navbarLink.money}}'>
+      <view bindtap='linkMoney' class='linkMoney'>
+        <image src='/assets/pngs/hongbao.png' mode='aspectFill' class='money'></image>
+        领钱
+      </view>
+    </view>
+    <view class='nav-capsule' style='height: {{height*2 + 25}}px; padding-top:19px;' wx:if='{{navbarCity.show&&navbarCity.city!=null}}'>
+      <view class='linkCity' bindtap='popOpen'>
+        <text>{{navbarCity.city}}</text>
+        <icon class='iconfont icon-youbian'></icon>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+<block wx:if="{{popUp.show}}">
+  <van-popup show="{{ popUp.show }}" z-index="9999999" position="bottom" bind:close="popClose" overlay-style="background-color:rgba(0, 0, 0, 0.4);">
+    <view class='city-title'>
+      {{cityType == '0'?'选择城市':'選擇城市'}}
+      <icon class='iconfont icon-closeing' catchtap='popClose'></icon>
+    </view>
+    <view class='city-line'>
+      <icon class='iconfont icon-citys'></icon>
+      {{cityType == '0'?'吃一波服务开通城市':'吃一波服務開通城市'}}
+    </view>
+    <view class='city-list'>
+      <block wx:for="{{cityList}}" wx:key="{{index}}">
+        <block wx:if="{{item != '澳门' }}">
+          <view class='city-tiem {{navbarCity.city == item ? "select-city":""}}' hover-class='hover-btn' catchtap='changeCity' data-city='{{item}}'>
+            {{item}}
+          </view>
+        </block>
+        <block wx:else>
+          <view class='city-tiem {{navbarCity.city == "澳门" ? "select-city":navbarCity.city == "澳門"? "select-city":""}}' hover-class='hover-btn' catchtap='changeCity' data-city='澳门'>
+            {{cityType == '0'?'澳门':'澳門'}}
+          </view>
+        </block>
+      </block>
+    </view>
+    <view class='city-fill-bottom'></view>
+  </van-popup>
+</block>

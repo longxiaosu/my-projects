@@ -1,0 +1,244 @@
+page {
+    background: #FBFAFB;
+}
+
+view {
+    box-sizing: border-box;
+}
+
+.job-info-box {
+    background: #fff;
+    padding: 0 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.mr-b {
+    margin-bottom: 20rpx;
+}
+
+.job-title {
+    font-size: 40rpx;
+    color: #000;
+    letter-spacing: 1px;
+    padding: 20rpx 0rpx;
+    line-height: 50rpx;
+}
+
+.job-money {
+    font-size: 34rpx;
+    color: #FD5F39;
+    letter-spacing: 0.5px;
+    line-height: 45rpx;
+}
+
+.tag-text {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.tag-item {
+    font-size: 26rpx;
+    color: #AAAAAA;
+    line-height: 40rpx;
+    margin-bottom: 20rpx;
+}
+
+.tag-line {
+    height: 24rpx;
+    width: 1px;
+    background: #AAAAAA;
+    margin: 10rpx 20rpx;
+}
+
+.company-info {
+    display: flex;
+    margin-bottom: 20rpx;
+}
+
+.company-img {
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 3px;
+    flex-shrink: 0;
+}
+
+.company-detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+    padding: 0 20rpx;
+}
+
+.company-names {
+    font-size: 30rpx;
+    color: #000;
+}
+
+.company-fornames {
+    font-size: 24rpx;
+    color: #AAAAAA;
+    margin-top: 15rpx;
+}
+
+.company-info .icon-you {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 120rpx;
+    height: 120rpx;
+    flex-shrink: 0;
+    font-size: 26rpx;
+    color: #C8C8C8;
+}
+
+.job-item-title {
+    position: relative;
+    line-height: 50rpx;
+    margin: 40rpx 0 20rpx;
+    padding: 0 0 0 24rpx;
+    font-size: 30rpx;
+    color: #000;
+    letter-spacing: 1px;
+}
+
+.job-item-title::after {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    content: '';
+    width: 3px;
+    height: 26rpx;
+    border-radius: 10px;
+    background: #2DC998;
+}
+
+.job-item-text {
+    font-size: 26rpx;
+    color: #666666;
+    line-height: 46rpx;
+}
+
+.pad-b {
+    padding-bottom: 30rpx;
+}
+
+.fill-bottom {
+    height: 200rpx;
+}
+
+.bottom-bar {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    z-index: 200;
+    background-color: #fff;
+    box-shadow: 0 -4rpx 18rpx 6rpx #eaeaea;
+    display: flex;
+    height: 90rpx;
+}
+
+.menu-btn {
+    height: auto;
+    line-height: normal;
+    background: none;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-btn::after {
+    border: none;
+}
+
+.share-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 200rpx;
+}
+
+.share-btn .icon-xiazai10 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36rpx;
+    color: #666666;
+    line-height: 46rpx;
+}
+
+.share-btn text {
+    font-size: 22rpx;
+    letter-spacing: 1px;
+}
+
+.chat-btn {
+    flex: 1;
+    background: #2DC998;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 30rpx;
+    letter-spacing: 2px;
+}
+
+.chats {
+    background: #409EFF;
+}
+
+.job-recommend {
+    font-size: 32rpx;
+    color: #000;
+    letter-spacing: 1px;
+    padding: 20rpx 0rpx;
+    line-height: 50rpx;
+    font-weight: bold;
+}
+
+.recommend-item {
+    display: flex;
+    align-items: center;
+    padding: 25rpx 0;
+    border-bottom: 1px dashed #e5e5e5;
+}
+
+.recommend-item .company-imgs {
+    width: 120rpx;
+    height: 120rpx;
+    margin-right: 25rpx;
+    flex-shrink: 0;
+}
+
+.jobs-similar-content {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.jobs-similar-content .job-names,
+.jobs-similar-content .saray,
+.jobs-similar-content .company-name {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    color: #333;
+    font-size: 26rpx;
+    text-align: left;
+    min-width: 0;
+}
+
+.jobs-similar-content .saray {
+    color: #e6775c;
+}
+
+.jobs-similar-content .company-name {
+    color: #999;
+    font-size: 24rpx;
+}

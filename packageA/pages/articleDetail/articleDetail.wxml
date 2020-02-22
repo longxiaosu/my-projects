@@ -1,0 +1,14 @@
+<nav-bar navbar-data='{{nvabarData}}'></nav-bar>
+<view style='height: {{topHeight}}px'></view>
+<form reportSubmit="true" bindsubmit="shareSubmit">
+    <view wx:if="{{detail != null}}" class="detail-content">
+        <view class="detail-title">{{detail.title}}</view>
+        <view class="detail-info">
+            <text>{{detail.articleTypeDesc}}</text>
+            <text>{{language.str2}} {{detail.gmtCreate}}</text>
+        </view>
+        <view class="detail-web">
+            <rich-text nodes="{{detail.webContent}}"></rich-text>
+        </view>
+    </view>
+</form>

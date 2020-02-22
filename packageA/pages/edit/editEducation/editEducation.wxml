@@ -1,0 +1,46 @@
+<nav-bar navbar-data='{{nvabarData}}'></nav-bar>
+<view style='height: {{topHeight}}px'></view>
+<form reportSubmit="true" bindsubmit="shareSubmit">
+    <view class="form-input-box">
+        <view class="form-input-item border-b">
+            <view class="form-input-title">{{language.str9}}</view>
+            <input type='text' cursor-spacing="50" name="organizationName" class="form-input-text" placeholder='{{language.str2}}' value='{{organizationName}}' placeholder-class='place-input'></input>
+            <icon class='iconfont icon-you'></icon>
+        </view>
+        <view class="form-input-item border-b">
+            <view class="form-input-title">{{language.str10}}</view>
+            <picker mode="multiSelector" bindchange="bindMultiChange" bindcolumnchange="bindColumnChange" range-key="name" value="{{position}}" range="{{rangeArray}}" class="form-input-text">
+                <view wx:if="{{position.length > 0}}" class="form-input-text eli">
+                    {{rangeArray[0][position[0]].name}}/{{rangeArray[1][position[1]].name}}
+                </view>
+                <view wx:else class="form-input-text eli">{{language.str3}}</view>
+            </picker>
+            <icon class='iconfont icon-you'></icon>
+        </view>
+        <view class="form-input-item border-b">
+            <view class="form-input-title">{{language.str11}}</view>
+            <picker mode="date" value="{{dateFrom}}" end="{{maxDate}}" bindchange="bindDateChange" fields="month" data-name="dateFrom" class="form-input-text">
+                <view class="form-input-text">{{dateFrom == ""?language.str4:dateFrom}}</view>
+            </picker>
+            <icon class='iconfont icon-you'></icon>
+        </view>
+        <view class="form-input-item">
+            <view class="form-input-title">{{language.str12}}</view>
+            <picker mode="date" value="{{dateTo}}" end="{{maxDate}}" bindchange="bindDateChange" fields="month" data-name="dateTo" class="form-input-text">
+                <view class="form-input-text">{{dateTo == ""?language.str5:dateTo}}</view>
+            </picker>
+            <icon class='iconfont icon-you'></icon>
+        </view>
+    </view>
+    <view class="mine-desc">{{language.str13}}</view>
+    <view class="text-area-box">
+        <textarea name="textarea" cursor-spacing="50" placeholder="{{language.str14}}" value="{{description}}" maxlength="500"></textarea>
+    </view>
+    <button class="menu-btn save-btn"  formType="submit">
+        <text>{{language.str15}}</text>
+    </button>
+    <button wx:if="{{editEducationObj !=''}}" class="menu-btn save-btn del-btn" catch:tap="DeleteItem" >
+        <text>{{language.str16}}</text>
+    </button>
+    <view class="fill-bottom"></view>
+</form>

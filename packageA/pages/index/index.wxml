@@ -1,0 +1,5 @@
+<nav-bar navbar-data='{{nvabarData}}'></nav-bar>
+<view style='height: {{topHeight}}px'></view>
+<form reportSubmit="true" bindsubmit="shareSubmit">
+
+</form>

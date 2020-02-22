@@ -1,0 +1,19 @@
+<van-popup show="{{ show }}" z-index="9999999" position="bottom" bind:close="popClose" overlay-style="{{bgColor}}" custom-style="box-shadow: 0 -4rpx 18rpx 6rpx #eaeaea;">
+    <form bindsubmit="shareSubmit" reportSubmit="true">
+        <view class='share-box'>
+            <!-- 生成朋友圈图片 -->
+            <button class="menu-btn share-item" formType="submit" catchtap='shares'>
+                <image class="friends-img" mode="aspectFit" src="/assets/pngs/pengyou.png"></image>
+                <view class="shares-text">{{language.str2}}</view>
+                <icon class='iconfont icon-you'></icon>
+            </button>
+            <!-- 转发给好友或群聊 -->
+            <button class="menu-btn share-item" formType="submit" open-type="share" catchtap='popClose'>
+                <image class="friends-img" mode="aspectFit" src="/assets/pngs/friend2.png"></image>
+                <view class="shares-text">{{language.str3}}</view>
+                <icon class='iconfont icon-you'></icon>
+            </button>
+            <view class="cancel-btn" catchtap='popClose'>{{language.str1}}</view>
+        </view>
+    </form>
+</van-popup>

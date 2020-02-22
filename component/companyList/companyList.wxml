@@ -1,0 +1,17 @@
+<block wx:for="{{list}}" wx:key="{{index}}">
+    <view class="job-item" catch:tap="linkToCompanyDetail" data-id="{{item.companyId}}">
+        <image mode="aspectFit" class="company-img" src="{{item.logo == null?'https://www.lgstatic.com/thumbnail_120x120/images/logo_default.png':item.logo}}" lazy-load></image>
+        <view class="job-detail">
+            <view class="job-name">{{item.chineseName}}</view>
+            <view class="company-name">
+                <!-- <icon class='iconfont icon-weizhi'></icon> -->
+                {{item.description}}
+            </view>
+            <view class="job-addr">
+                <icon class='iconfont icon-gongwenbao'></icon>
+                <text>{{item.jobNum}} {{language.str1}}</text>
+            </view>
+        </view>
+        <view class="job-info"></view>
+    </view>
+</block>

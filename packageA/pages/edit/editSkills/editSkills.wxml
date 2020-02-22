@@ -1,0 +1,12 @@
+<nav-bar navbar-data='{{nvabarData}}'></nav-bar>
+<view style='height: {{topHeight}}px'></view>
+<form reportSubmit="true" bindsubmit="shareSubmit">
+    <view class="mine-desc">{{language.str3}}</view>
+    <view class="text-area-box">
+        <textarea name="textarea" placeholder="{{language.str4}}" value="{{editSkills}}" maxlength="500"></textarea>
+    </view>
+    <view class="tips-title">{{language.str5}}</view>
+    <button class="menu-btn save-btn" formType="submit">
+        <text>{{language.str6}}</text>
+    </button>
+</form>

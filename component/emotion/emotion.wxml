@@ -1,0 +1,9 @@
+  <swiper  class="swiper-box" indicator-dots="{{true}}" duration="300" indicator-color="rgba(221, 221, 221)" indicator-active-color="rgba(47, 47, 47)">
+    <swiper-item wx:for="{{list}}" wx:key="{{index}}">
+      <view class="emotion-menu">
+        <view wx:for="{{item}}" wx:for-index="idx" wx:for-item="itemName" wx:key="{{idx}}" class="emotion-item" catch:tap="selectEmotion" data-name="{{itemName.name}}">
+            <image mode="aspectFit" class="emotion-img" src="{{'https://res.wx.qq.com/mpres/htmledition/images/icon/emotion/'+itemName.id+'.gif'}}" lazy-load></image>
+        </view>
+      </view>
+    </swiper-item>
+  </swiper>

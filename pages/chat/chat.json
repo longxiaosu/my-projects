@@ -1,0 +1,15 @@
+{
+  "disableSwipeBack": true,
+  "enablePullDownRefresh": true,
+  "backgroundColor": "#fff",
+  "backgroundTextStyle": "dark",
+  "navigationBarBackgroundColor":"#2DC998",
+  "navigationBarTitleText":"在線溝通",
+  "navigationBarTextStyle":"white",
+  "navigationStyle": "default",
+  "backgroundColorTop":"#2DC998",
+  "usingComponents": {
+    "go-top": "/component/goTop/go-top",
+    "van-swipe-cell": "/dist/swipe-cell/index"
+  }
+}

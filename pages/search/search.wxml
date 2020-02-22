@@ -1,0 +1,72 @@
+<nav-bar navbar-data='{{nvabarData}}'></nav-bar>
+<view style='height: {{topHeight}}px'></view>
+<go-top is-show='{{showGoTop}}'></go-top>
+<form reportSubmit="true" bindsubmit="shareSubmit">
+    <view class='top-search' style='margin-top: {{topHeight}}px'>
+        <view class='search-input'>
+            <icon class='iconfont icon-wenhao'></icon>
+            <input type='text' focus="{{true}}" placeholder="{{language.str6}}" bindinput="bindDataInput" value='{{searchName}}' confirm-type="search" bindconfirm="searchJob"></input>
+            <icon class='iconfont icon-qingchu' catchtap='cleanSearchInput' hidden='{{searchName==""}}'></icon>
+        </view>
+        <view class='search-btn' catchtap='searchJob'>{{language.str7}}</view>
+    </view>
+    <view class='fill-top'></view>
+    <block wx:if='{{showAdvice}}'>
+        <!-- 搜索历史 -->
+        <view class='history-list showFade' wx:if="{{historyResults.length>0}}">
+            <view class='history-title'>
+                <text>{{language.str8}}</text>
+                <icon class='iconfont icon-shanchu' catchtap='deleteHistory'></icon>
+            </view>
+            <view class="list-row">
+                <button wx:for="{{historyResults}}" wx:key="{{index}}" formType="submit" class="list-item" catchtap='searchJob' data-name='{{item}}'>
+                    {{item}}
+                </button>
+            </view>
+        </view>
+        <!-- 热门分类 -->
+        <view class='history-list showFade' wx:if="{{hotList.length>0}}">
+            <view class='history-title'>
+                <text>{{language.str9}}</text>
+            </view>
+            <view class="list-row">
+                <button wx:for="{{hotList}}" wx:key="id" formType="submit" class="list-item" catchtap='searchJob' data-name='{{item.name}}'>
+                    {{item.name}}
+                </button>
+            </view>
+        </view>
+    </block>
+    <block wx:if='{{!showAdvice}}'>
+        <!-- 搜索结果 -->
+        <view class="searcth-title" wx:if="{{total>=0 && ctotal>=0}}">{{language.str10}}</view>
+        <view class="classify" wx:if="{{total>=0 && ctotal>=0}}">
+            <!-- 职位 -->
+            <view class="classify-item {{classIfy == 1?'classify-active':''}}" catch:tap="changeClassify" data-id="1">
+                {{language.str11}}({{total>500? total+'+':total}})
+            </view>
+            <!-- 公司 -->
+            <view class="classify-item {{classIfy == 2?'classify-active':''}}" catch:tap="changeClassify" data-id="2">
+                {{language.str12}}({{ctotal>500? ctotal+'+':ctotal}})
+            </view>
+        </view>
+        <view hidden="{{classIfy != 2}}">
+            <!-- 公司列表 -->
+            <company-list list="{{clist}}"></company-list>
+            <view class="hideLoad">
+                <text wx:if='{{!chideLoad&&ctotal!=0}}'>{{language.str13}}</text>
+                <text wx:else>{{cisBottomRefreshing == true ? language.str2:''}}</text>
+                <text wx:if="{{ctotal == 0}}">{{language.str14}}</text>
+            </view>
+        </view>
+        <view hidden="{{classIfy != 1}}">
+            <!-- 职位列表 -->
+            <job-list list="{{list}}"></job-list>
+            <view class="hideLoad">
+                <text wx:if='{{!hideLoad&&total!=0}}'>{{language.str13}}</text>
+                <text wx:else>{{isBottomRefreshing == true ? language.str2:''}}</text>
+                <text wx:if="{{total == 0}}">{{language.str14}}</text>
+            </view>
+        </view>
+    </block>
+    <view class="fill-bottom"></view>
+</form>

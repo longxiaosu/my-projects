@@ -1,0 +1,179 @@
+<nav-bar navbar-data='{{nvabarData}}'></nav-bar>
+<view style='height: {{topHeight}}px;background: #fff;'></view>
+<form reportSubmit="true" bindsubmit="shareSubmit">
+    <view wx:if="{{detail.chineseName != ''}}" class="basic-info">
+        <!-- 头像和姓名 -->
+        <view class="basic-user">
+            <view class="basic-username">
+                <view class="ch-name">
+                    <text>{{detail.chineseName}}</text>
+                    <image wx:if="{{detail.gender == 1}}" class="gender-img" mode="aspectFit" src="/assets/pngs/man.png"></image>
+                    <image wx:if="{{detail.gender == 2}}" class="gender-img" mode="aspectFit" src="/assets/pngs/woman.png"></image>
+                    <button class="menu-btn" catch:tap="linkToEditBasic" formType="submit">
+                        <icon class='iconfont icon-edit'></icon>
+                        {{language.str20}}
+                    </button>
+                </view>
+                <view wx:if="{{detail.foreignName!=''}}" class="foreign-name">
+                    {{detail.foreignName}}
+                </view>
+            </view>
+            <image class="avatar-img" mode="aspectFill" catch:tap="chooseImage" src="{{detail.imgUrl}}" lazy-load></image>
+        </view>
+        <view wx:if="{{detail.birthday!=''}}" class="basic-item">
+            <icon class='iconfont icon-shengri'></icon>
+            <text>{{detail.birthday}}</text>
+        </view>
+        <view wx:if="{{detail.phone!=''}}" class="basic-item">
+            <icon class='iconfont icon-iconphone'></icon>
+            <text>{{detail.phone}}</text>
+        </view>
+        <view wx:if="{{detail.wechatId!=''}}" class="basic-item">
+            <icon class='iconfont icon-weixin'></icon>
+            <text>{{detail.wechatId}}</text>
+        </view>
+        <!-- 求职意愿 -->
+        <view class="form-input-item">
+            <view class="form-input-title">{{language.str21}}</view>
+            <picker mode="selector" bindchange="bindDateChange" data-name="interest" range-key="name" value="{{interest}}" range="{{huntingStatus}}" class="form-input-text">
+                <view class="form-input-text eli">
+                    {{huntingStatus[interest].name}}
+                </view>
+            </picker>
+            <icon class='iconfont icon-you'></icon>
+        </view>
+
+    </view>
+    <button wx:if="{{detail.birthday == ''}}" class="menu-btn add-item" catch:tap="linkToEditBasic" formType="submit">
+        <icon class='iconfont icon-edit'></icon>
+        <text>{{language.str22}}</text>
+    </button>
+    <!-- 关于我 -->
+    <button wx:if="{{detail.description == ''||detail.description == null}}" class="menu-btn add-item mr-t" catch:tap="linkToEditDesc" formType="submit">
+        <icon class='iconfont icon-tianjia'></icon>
+        <text>{{language.str23}}</text>
+    </button>
+    <view wx:else class="desc-box mr-t">
+        <view class="desc-title">
+            <text>{{language.str24}}</text>
+            <button class="menu-btn edit-item" catch:tap="linkToEditDesc" formType="submit">
+                {{language.str25}}
+            </button>
+        </view>
+        <text class="desc-content">{{detail.description}}</text>
+    </view>
+    <!-- 专长或技能 -->
+    <button wx:if="{{detail.skills == ''||detail.skills == null}}" class="menu-btn add-item mr-t" catch:tap="linkToEditSkills" formType="submit">
+        <icon class='iconfont icon-tianjia'></icon>
+        <text>{{language.str26}}</text>
+    </button>
+    <view wx:else class="desc-box mr-t">
+        <view class="desc-title">
+            <text>{{language.str27}}</text>
+            <button class="menu-btn edit-item" catch:tap="linkToEditSkills" formType="submit">
+                {{language.str28}}
+            </button>
+        </view>
+        <text class="desc-content">{{detail.skills}}</text>
+    </view>
+    <!-- 工作经历 -->
+    <view wx:if="{{detail.experience.length > 0}}" class="desc-box mr-t">
+        <view class="desc-title name-title">
+            <text>{{language.str29}}</text>
+        </view>
+        <block wx:for="{{detail.experience}}" wx:key="{{index}}">
+            <view class="name-desc mr-t">
+                <text>{{item.position}}</text>
+                <button class="menu-btn edit-item" catch:tap="linkToEditExperience" data-index="{{index}}" formType="submit">
+                    {{language.str28}}
+                </button>
+            </view>
+            <view class="name-address">{{item.organizationName}}</view>
+            <view class="name-address name-times">{{item.times}}</view>
+            <view wx:if="{{item.description != ''}}" class="desc-title name-detail">
+                <text>{{language.str30}}</text>
+            </view>
+            <text wx:if="{{item.description != ''}}" class="desc-content bor-b">{{item.description}}</text>
+        </block>
+    </view>
+    <button class="menu-btn add-item {{detail.experience.length > 0?'':'mr-t'}}" catch:tap="linkToEditExperience" data-index="-1" formType="submit">
+        <icon class='iconfont icon-tianjia'></icon>
+        <text>{{language.str31}}</text>
+    </button>
+    <!-- 教育经历 -->
+    <view wx:if="{{detail.education.length > 0}}" class="desc-box mr-t">
+        <view class="desc-title name-title">
+            <text>{{language.str32}}</text>
+        </view>
+        <block wx:for="{{detail.education}}" wx:key="{{index}}">
+            <view class="name-desc mr-t">
+                <text>{{item.major}}</text>
+                <button class="menu-btn edit-item" catch:tap="linkToEditEducation" data-index="{{index}}" formType="submit">
+                    {{language.str28}}
+                </button>
+            </view>
+            <view class="name-address">{{item.organizationName}}</view>
+            <view class="name-address name-times">{{item.times}}</view>
+            <view wx:if="{{item.description != ''}}" class="desc-title name-detail">
+                <text>{{language.str33}}</text>
+            </view>
+            <text wx:if="{{item.description != ''}}" class="desc-content bor-b">{{item.description}}</text>
+        </block>
+    </view>
+    <button class="menu-btn add-item {{detail.education.length > 0?'':'mr-t'}}" catch:tap="linkToEditEducation" data-index="-1" formType="submit">
+        <icon class='iconfont icon-tianjia'></icon>
+        <text>{{language.str34}}</text>
+    </button>
+    <!-- 获得证书 -->
+    <view wx:if="{{detail.certificate.length > 0}}" class="desc-box mr-t">
+        <view class="desc-title name-title">
+            <text>{{language.str35}}</text>
+        </view>
+        <block wx:for="{{detail.certificate}}" wx:key="{{index}}">
+            <view class="name-desc mr-t">
+                <text>{{item.title}}</text>
+                <button class="menu-btn edit-item" catch:tap="linkToEditCertificate" data-index="{{index}}" formType="submit">
+                    {{language.str28}}
+                </button>
+            </view>
+            <view class="name-address">{{item.organizationName}}</view>
+            <view class="name-address name-times">{{item.times}}</view>
+            <view wx:if="{{item.description != ''}}" class="desc-title name-detail">
+                <text>{{language.str36}}</text>
+            </view>
+            <text wx:if="{{item.description != ''}}" class="desc-content bor-b">{{item.description}}</text>
+        </block>
+    </view>
+    <button class="menu-btn add-item {{detail.certificate.length > 0?'':'mr-t'}}" catch:tap="linkToEditCertificate" data-index="-1" formType="submit">
+        <icon class='iconfont icon-tianjia'></icon>
+        <text>{{language.str37}}</text>
+    </button>
+    <!-- 課程/比賽/活動经历 -->
+    <view wx:if="{{detail.match.length > 0}}" class="desc-box mr-t">
+        <view class="desc-title name-title">
+            <text>{{language.str38}}</text>
+        </view>
+        <block wx:for="{{detail.match}}" wx:key="{{index}}">
+            <view class="name-desc mr-t">
+                <text>{{item.title}}</text>
+                <button class="menu-btn edit-item" catch:tap="linkToEditMatch" data-index="{{index}}" formType="submit">
+                    {{language.str28}}
+                </button>
+            </view>
+            <view class="name-address">{{item.organizationName}}</view>
+            <view class="name-address name-times">{{item.times}}</view>
+            <view wx:if="{{item.description != ''}}" class="desc-title name-detail">
+                <text>{{language.str39}}</text>
+            </view>
+            <text wx:if="{{item.description != ''}}" class="desc-content bor-b">{{item.description}}</text>
+        </block>
+    </view>
+    <button class="menu-btn add-item {{detail.match.length > 0?'':'mr-t'}}" catch:tap="linkToEditMatch" data-index="-1" formType="submit">
+        <icon class='iconfont icon-tianjia'></icon>
+        <text>{{language.str40}}</text>
+    </button>
+    <button class="menu-btn save-btn" formType="submit" catch:tap="checkSaveResume">
+        <text>{{language.str41}}</text>
+    </button>
+    <view class="fill-bottom"></view>
+</form>

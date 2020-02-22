@@ -1,0 +1,52 @@
+<nav-bar navbar-data='{{nvabarData}}'></nav-bar>
+<view style='height: {{topHeight}}px'></view>
+<view class="top-title">{{language.str9}}</view>
+<view class="radio-box">
+    <radio-group class="radio-group" bindchange="radioChange">
+        <radio class="radio-item" value="0" checked="{{true}}">
+            <view class="options-box">
+                <text class="options-text">{{language.str10}}</text>
+            </view>
+        </radio>
+        <radio class="radio-item" value="1">
+            <view class="options-box">
+                <text class="options-text">{{language.str11}}</text>
+            </view>
+        </radio>
+    </radio-group>
+</view>
+<view wx:if="{{currentTab==0}}" class="input-content">
+    <form reportSubmit="true" bindsubmit="bindEmail">
+        <view class="input-box">
+            <icon class='iconfont icon-youxiang'></icon>
+            <input type='text' cursor-spacing="50" class="form-input-text" placeholder='{{language.str1}}' name="account" placeholder-class='place-input'></input>
+        </view>
+        <view class="input-box">
+            <icon class='iconfont icon-mima'></icon>
+            <input type='text' cursor-spacing="50" password="{{true}}" class="form-input-text" placeholder='{{language.str2}}' name="passWord" placeholder-class='place-input'></input>
+        </view>
+        <view class="input-box">
+            <icon class='iconfont icon-mima'></icon>
+            <input type='text' cursor-spacing="50" password="{{true}}" class="form-input-text" placeholder='{{language.str3}}' name="passWordRes" placeholder-class='place-input'></input>
+        </view>
+        <button class="menu-btn save-btn" formType="submit">
+            <text>{{language.str12}}</text>
+        </button>
+    </form>
+</view>
+<view wx:if="{{currentTab==1}}" class="input-content">
+    <form reportSubmit="true" bindsubmit="bindEmail2">
+        <view class="input-box">
+            <icon class='iconfont icon-youxiang'></icon>
+            <input type='text' cursor-spacing="50" class="form-input-text" placeholder='{{language.str6}}' name="account" placeholder-class='place-input'></input>
+        </view>
+        <view class="input-box">
+            <icon class='iconfont icon-mima'></icon>
+            <input type='text' cursor-spacing="50" password="{{true}}" class="form-input-text" placeholder='{{language.str2}}' name="passWord" placeholder-class='place-input'></input>
+        </view>
+        <button class="menu-btn save-btn" formType="submit">
+            <text>{{language.str13}}</text>
+        </button>
+    </form>
+</view>
+<view class="fill-bottom"></view>

@@ -1,0 +1,117 @@
+<scroll-view scroll-y="{{true}}" scroll-top="{{scrollTop}}" bindscrolltoupper="pushMoreMsgDetail" style='height: {{winHeight}}rpx;' class='chat-box' catch:tap="closeBottomShow" scroll-with-animation>
+  <view class="fill-bottoms nomore-text"><text  wx:if="{{isRefreshing == true}}">{{language.str3}}</text></view>
+  <block wx:for="{{list}}" wx:key="{{index}}">
+    <!-- 自己发出的消息 -->
+    <view wx:if="{{item.flag == 1}}" class="mine-msg">
+      <view class="msg-box-my">
+        <view class='arrow'>
+          <em></em>
+          <span></span>
+        </view>
+        <!-- <text class="msg-text" selectable="{{true}}" decode="{{true}}">{{item.msg}}</text> -->
+        <view class="msg-text"><rich-text nodes="{{item.msg}}"></rich-text></view>
+      </view>
+      <image class="user-avatar" src='{{item.currentAvatar}}' mode="aspectFill" lazy-load="{{true}}"></image>
+    </view>
+    <!-- 别人发过来的消息 -->
+    <view wx:if="{{item.flag == 0}}" class="other-msg">
+      <image class="user-avatar" src='{{item.otherAvatar}}' mode="aspectFill" catch:tap="linkToCompany" lazy-load="{{true}}"></image>
+      <view class="msg-box-other">
+        <view class='arrow'>
+          <em></em>
+          <span></span>
+        </view>
+        <view class="msg-text"><rich-text nodes="{{item.msg}}"></rich-text></view>
+      </view>
+    </view>
+  </block>
+  <view class="fill-bottoms"></view>
+</scroll-view>
+<!-- 消息输入栏 -->
+<view class="chat-input {{showEmotion==true?'emotionShows':''}} {{showMenu==true?'emotionShows':''}}" style="bottom: {{inputBottom}}rpx">
+  <input type="text" confirm-type="send" bindfocus="inputFocus" bindblur="inputBlur" confirm-hold="{{true}}" focus="{{focus}}" cursor-spacing="15rpx" bindconfirm="sendMsg" adjust-position="{{false}}" class="input-msg" value="{{msg}}" bindinput="bindDateChange" data-name="msg" />
+  <view class="menu-icon">
+    <icon wx:if="{{showEmotion==false}}" class='iconfont icon-biaoqing1' catch:tap="showEmotion"></icon>
+    <icon wx:if="{{showEmotion==true}}" class='iconfont icon-scrm-app-icon_huabanfuben' catch:tap="closeEmotion"></icon>
+    <icon wx:if="{{showMenu==false}}" class='iconfont icon-jiahao' catch:tap="showMoreMenu"></icon>
+    <icon wx:if="{{showMenu==true}}" class='iconfont icon-jiahao' catch:tap="closeMoreMenu"></icon>
+  </view>
+</view>
+<!-- 表情栏 -->
+<view class="chat-emotion {{showEmotion==true?'emotionShow':''}}">
+  <emotion bind:change="selectEmotion"></emotion>
+</view>
+<!-- 菜单选择栏 -->
+<view class="chat-emotion {{showMenu==true?'emotionShow':''}}">
+  <swiper wx:if="{{menuType == 0}}" class="swiper-box" indicator-dots="{{true}}" duration="300" indicator-color="rgba(221, 221, 221)" indicator-active-color="rgba(47, 47, 47)">
+    <swiper-item>
+      <view class="swiper-menu">
+        <view class="swiper-item">
+          <view class="swiper-inner">
+            <icon class='iconfont icon-zhaopian'></icon>
+          </view>
+          <view class="swiper-text">照片</view>
+        </view>
+        <view class="swiper-item">
+          <view class="swiper-inner">
+            <icon class='iconfont icon-paishe'></icon>
+          </view>
+          <view class="swiper-text">拍摄</view>
+        </view>
+        <view class="swiper-item">
+          <view class="swiper-inner">
+            <icon class='iconfont icon-yuyintonghua'></icon>
+          </view>
+          <view class="swiper-text">语音通话</view>
+        </view>
+        <view class="swiper-item">
+          <view class="swiper-inner">
+            <icon class='iconfont icon-weizhi1'></icon>
+          </view>
+          <view class="swiper-text">位置</view>
+        </view>
+        <view class="swiper-item">
+          <view class="swiper-inner">
+            <icon class='iconfont icon-hongbao'></icon>
+          </view>
+          <view class="swiper-text">红包</view>
+        </view>
+        <view class="swiper-item">
+          <view class="swiper-inner">
+            <icon class='iconfont icon-yuyinshuru'></icon>
+          </view>
+          <view class="swiper-text">语音输入</view>
+        </view>
+        <view class="swiper-item">
+          <view class="swiper-inner">
+            <icon class='iconfont icon-shoucang1'></icon>
+          </view>
+          <view class="swiper-text">收藏</view>
+        </view>
+        <view class="swiper-item">
+          <view class="swiper-inner">
+            <icon class='iconfont icon-Italktubiaozhuanqu'></icon>
+          </view>
+          <view class="swiper-text">个人名片</view>
+        </view>
+      </view>
+    </swiper-item>
+    <swiper-item>
+      <view class="swiper-menu">
+        <view class="swiper-item" catch:tap="selectMenuType" data-type="1">
+          <view class="swiper-inner">
+            <icon class='iconfont icon-changyongyu'></icon>
+          </view>
+          <view class="swiper-text">{{language.str4}}</view>
+        </view>
+      </view>
+    </swiper-item>
+  </swiper>
+  <!-- 常用语选择 -->
+  <scroll-view wx:if="{{menuType == 1}}" scroll-y="{{true}}" class="phrase">
+    <view class="phrase-item" catch:tap="selectPhrase" data-msg="{{language.str5}}">{{language.str5}}</view>
+    <view class="phrase-item" catch:tap="selectPhrase" data-msg="{{language.str6}}">{{language.str6}}</view>
+    <view class="phrase-item" catch:tap="selectPhrase" data-msg="{{language.str7}}">{{language.str7}}</view>
+  </scroll-view>
+</view>
+<view wx:if="{{showMenu==true||showEmotion==true}}" class="chat-emotion-bg"></view>

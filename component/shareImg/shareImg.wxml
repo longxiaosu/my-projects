@@ -1,0 +1,11 @@
+<block wx:if="{{show}}">
+  <view class="background-box" catch:tap="closeWindow" catchtouchmove="closeTips"></view>
+  <view class="share-img-box">
+    <view class="top-title">
+      {{language.str4}}
+      <icon class='iconfont icon-closeing' catch:tap="closeWindow"></icon>
+    </view>
+    <image src="{{shareImgs}}" catchtap='lookImg' mode="aspectFit" class='share-img' />
+    <view class="save-btn" catch:tap="saveImg" wx:if="{{shareImgs != ''}}">{{language.str5}}</view>
+  </view>
+</block>

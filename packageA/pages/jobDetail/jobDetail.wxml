@@ -1,0 +1,122 @@
+<nav-bar navbar-data='{{nvabarData}}'></nav-bar>
+<view style='height: {{topHeight}}px'></view>
+<!-- 登陆组件 -->
+<login-panel show="{{loginShow}}" bind:close="closeLogin"></login-panel>
+<block wx:if="{{jobDetail!=null}}">
+    <!-- 申请工作组件 -->
+    <apply-job show="{{applyShow}}" resume-option="{{resumeOptions}}" job-id="{{jobDetail.jobId}}" job-name="{{jobDetail.jobTitle}}" bind:close="closeApplyJob"></apply-job>
+    <!-- 发送消息组件 -->
+    <send-msg show="{{msgShow}}"  job-id="{{jobDetail.jobId}}" company-id="{{jobDetail.companyId}}" bind:close="closeMsgShow"></send-msg>
+    <form reportSubmit="true" bindsubmit="shareSubmit">
+        <view class="job-info-box mr-b">
+            <!-- 职位名称 -->
+            <view class="job-title">{{jobDetail.jobTitle}}</view>
+            <!-- 薪资水平 -->
+            <view class="job-money">{{jobDetail.salaryStr}}</view>
+            <!-- 工作分类，工作地点，工作类型 -->
+            <view class="tag-text">
+                <view class="tag-item">{{jobDetail.jobTypeDesc}}</view>
+                <view class="tag-line"></view>
+                <view class="tag-item">{{jobDetail.workLocation}}</view>
+                <view class="tag-line"></view>
+                <view class="tag-item">
+                    {{jobDetail.salaryType ==1?language.str13:language.str12}}
+                </view>
+            </view>
+            <!-- 公司信息 -->
+            <view class="company-info" catch:tap="linkToCompanyDetail">
+                <image mode="aspectFit" class="company-img" src="{{jobDetail.companyInfoDTO.logo==null?'https://www.lgstatic.com/thumbnail_120x120/images/logo_default.png':jobDetail.companyInfoDTO.logo}}" lazy-load></image>
+                <view class="company-detail">
+                    <view class="company-names">{{jobDetail.companyInfoDTO.chineseName}}</view>
+                    <view wx:if="{{jobDetail.companyInfoDTO.address != null}}" class="company-fornames">
+                        {{jobDetail.companyInfoDTO.address}}
+                    </view>
+                </view>
+                <icon class='iconfont icon-you'></icon>
+            </view>
+        </view>
+        <view class="job-info-box mr-b pad-b">
+            <!-- 職位描述 -->
+            <view wx:if="{{jobDetail.description != null&&jobDetail.description !=''}}" class="job-item-title">
+                {{language.str6}}
+            </view>
+            <text wx:if="{{jobDetail.description != null&&jobDetail.description !=''}}" class="job-item-text" selectable>{{jobDetail.description}}</text>
+            <!-- 職位要求 -->
+            <view wx:if="{{jobDetail.requirement != null&&jobDetail.requirement !=''}}" class="job-item-title">
+                {{language.str15}}
+            </view>
+            <text wx:if="{{jobDetail.requirement != null&&jobDetail.requirement !=''}}" class="job-item-text" selectable>{{jobDetail.requirement}}</text>
+            <!-- 薪酬福利 -->
+            <view wx:if="{{jobDetail.salaryText != null&&jobDetail.salaryText !=''}}" class="job-item-title">
+                {{language.str7}}
+            </view>
+            <text wx:if="{{jobDetail.salaryText != null&&jobDetail.salaryText !=''}}" class="job-item-text" selectable>{{jobDetail.salaryText}}</text>
+            <!-- 備註信息 -->
+            <view wx:if="{{jobDetail.remark != null&&jobDetail.remark !=''}}" class="job-item-title">
+                {{language.str8}}
+            </view>
+            <text wx:if="{{jobDetail.remark != null&&jobDetail.remark !=''}}" class="job-item-text" selectable>{{jobDetail.remark}}</text>
+            <!-- 工作地址 -->
+            <view class="job-item-title">{{language.str9}}</view>
+            <text class="job-item-text" selectable>{{jobDetail.workLocation}}{{jobDetail.location==''?'':'- '+jobDetail.location}}</text>
+            <!-- 電郵 -->
+            <view wx:if="{{jobDetail.email != null&&jobDetail.email !=''}}" class="job-item-title">
+                {{language.str10}}
+            </view>
+            <text wx:if="{{jobDetail.email != null&&jobDetail.email !=''}}" class="job-item-text" selectable>{{jobDetail.email}}</text>
+        </view>
+        <view wx:if="{{jobDetail.relevantWorks.length > 0}}" class="job-info-box mr-b pad-b">
+            <!-- 相似职位 -->
+            <view class="job-recommend">{{language.str17}}</view>
+            <view wx:for="{{jobDetail.relevantWorks}}" wx:key="{{index}}" data-id="{{item.jobId}}" catch:tap="linkToJobDetail" class="recommend-item">
+                <image mode="aspectFill" class="company-imgs" src="{{item.imgUrl==null?'https://www.lgstatic.com/thumbnail_120x120/images/logo_default.png':item.imgUrl}}" lazy-load></image>
+                <view class="jobs-similar-content">
+                    <text class="job-names">{{item.jobTitle}}</text>
+                    <text class="saray">{{item.salaryStr}}</text>
+                    <text class="company-name">{{item.companyName}}</text>
+                </view>
+            </view>
+        </view>
+        <view class="fill-bottom"></view>
+        <!-- 底部操作栏 -->
+        <view class="bottom-bar">
+            <!-- 分享 -->
+            <button class="menu-btn share-btn" hover-class="hover-btn" formType="submit" catch:tap="openShare">
+                <icon class='iconfont icon-xiazai10'></icon>
+                <text>{{language.str5}}</text>
+            </button>
+            <!-- 已下架 -->
+            <block wx:if="{{jobDetail.isActive != 1}}">
+                <button class="menu-btn chat-btn" formType="submit">
+                    <text>{{language.str18}}</text>
+                </button>
+            </block>
+            <block wx:elif="{{jobDetail.status != 0}}">
+                <!-- 停止招 -->
+                <button class="menu-btn chat-btn" formType="submit">
+                    <text>{{language.str19}}</text>
+                </button>
+            </block>
+            <block wx:else>
+                <!-- 发送消息 -->
+                <button class="menu-btn chat-btn chats" catch:tap="openMsgShow" hover-class="hover-btn" formType="submit">
+                    <text>{{language.str30}}</text>
+                </button>
+                <!-- 立即申请 -->
+                <button wx:if="{{jobDetail.userInfo == null || jobDetail.userInfo.hasApply == false}}"  catch:tap="openApplyJob"  class="menu-btn chat-btn" hover-class="hover-btn" formType="submit">
+                    <text>{{language.str4}}</text>
+                </button>
+                <!-- 已申请 -->
+                <button wx:else class="menu-btn chat-btn" formType="submit">
+                    <text>{{language.str20}}</text>
+                </button>
+            </block>
+        </view>
+    </form>
+</block>
+<!-- 分享组件 -->
+<share-bars  show="{{shareShow}}" bind:hides="closeShare" bind:shares="shareFriend"></share-bars>
+<!-- 分享图预览组件 -->
+<share-img show="{{shareImgShow}}" share-imgs="{{shareImg}}" bind:close="closeShareImgBox"></share-img>
+<!-- 分享图 -->
+<canvas style="width: 1125px;height: 1728px;position: fixed;top: -12000px;" canvas-id="jobShare"></canvas>

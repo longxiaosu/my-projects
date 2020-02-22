@@ -1,0 +1,10 @@
+<nav-bar navbar-data='{{nvabarData}}'></nav-bar>
+<view style='height: {{topHeight}}px'></view>
+<view class="form-input-box">
+    <!-- 是否隐藏简历 -->
+    <view class="form-input-item ">
+        <view class="form-input-title">{{language.str3}}</view>
+        <switch checked="{{resumeHidden}}" bindchange="bindDateChange" data-name="resumeHidden" class="form-input-text switch"/>
+    </view>
+</view>
+<view class="fill-bottom"></view>

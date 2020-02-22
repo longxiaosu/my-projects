@@ -1,0 +1,16 @@
+<view class="nav-wrap" style='height: {{topHeight}}px;background-color:{{ navStyle.background }};'>
+  <view class='nav-capsule' style='height: {{height*2 + 25}}px;padding-top:17px;' wx:if='{{navbarData.showCapsule}}'>
+    <view class="menu-box">
+      <view bindtap='_navback' wx:if='{{!share}}'>
+        <icon class='iconfont icon-fanhui'></icon>
+      </view>
+      <view class='navbar-v-line' wx:if='{{!share}}'></view>
+      <view bindtap='_backhome'>
+        <icon class='iconfont icon-shouye'></icon>
+      </view>
+    </view>
+  </view>
+  <view class='nav-title' style='line-height: {{height*2 + 44}}px;' hidden="{{navStyle.background == 'rgba(255,255,255,0)'}}">
+    {{navbarData.title}}
+  </view>
+</view>

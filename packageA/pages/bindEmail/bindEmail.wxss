@@ -1,0 +1,100 @@
+page {
+    background: #fff;
+}
+
+view {
+    box-sizing: border-box;
+}
+
+.top-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36rpx;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #313131;
+    height: 100rpx;
+}
+
+.radio-box {
+    padding: 20rpx 70rpx;
+}
+
+.radio-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.radio-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 35rpx;
+}
+
+.options-box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding-left: 20rpx;
+}
+
+.options-text {
+    font-size: 28rpx;
+    color: #626262;
+    letter-spacing: 0.6px;
+
+}
+
+.input-content {
+    padding: 20rpx 70rpx;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-box {
+    display: flex;
+    align-items: center;
+    height: 110rpx;
+    border-bottom: 1px solid #D3D3D3;
+}
+
+.input-box .iconfont {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80rpx;
+    font-size: 38rpx;
+    color: #999999;
+    margin-right: 10rpx;
+}
+
+.form-input-text {
+    flex: 1;
+    font-size: 28rpx;
+    color: #000;
+    height: 80rpx;
+    line-height: 80rpx;
+}
+
+.place-input {
+    color: #999999;
+}
+
+.save-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32rpx;
+    letter-spacing: 2px;
+    color: #fff;
+    background: #16B38A;
+    border-radius: 3px;
+    width: 100%;
+    height: 85rpx;
+    margin-top: 80rpx;
+}
+
+.fill-bottom {
+    height: 100rpx;
+}

@@ -1,0 +1,212 @@
+page {
+    background: #FFFFFF;
+}
+
+view {
+    box-sizing: border-box;
+}
+
+.menu-btn {
+    height: auto;
+    line-height: normal;
+    background: none;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-btn::after {
+    border: none;
+}
+
+.company-banner {
+    padding: 30rpx 25rpx 30rpx;
+}
+
+.banner-img {
+    display: block;
+    box-sizing: border-box;
+    width: 700rpx;
+    border: 2px solid #eee;
+}
+
+.info-box {
+    padding: 20rpx 25rpx;
+}
+
+.company-chinese {
+    font-size: 50rpx;
+    font-weight: 200;
+    line-height: 70rpx;
+    color: #182642;
+}
+
+.company-foreign {
+    font-weight: 26rpx;
+    color: #666;
+    text-transform: uppercase;
+}
+
+.company-data-title {
+    font-size: 28rpx;
+    color: #aaa;
+    padding: 10rpx;
+    border-bottom: 1px solid #eee;
+}
+
+.company-data-info {
+    display: block;
+    font-size: 28rpx;
+    line-height: 50rpx;
+    word-break: break-all;
+    color: #1a1f21;
+    margin-top: 10rpx;
+    letter-spacing: 1px;
+}
+
+.mrt {
+    margin-top: 50rpx;
+}
+
+.mrb {
+    margin-bottom: 40rpx;
+}
+
+.job-item {
+    position: relative;
+    padding: 30rpx 30rpx;
+    margin-bottom: 40rpx;
+    border: 1px solid #ededed;
+    font-size: 26rpx;
+}
+
+.item-title-data {
+    display: flex;
+    align-items: center;
+    color: #333;
+}
+
+.jobs-name {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-right: 20rpx;
+    box-sizing: border-box;
+}
+
+.job-address {
+    flex-shrink: 0;
+    max-width: 100rpx;
+    padding: 0 6rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+
+.job-money {
+    flex-shrink: 0;
+    box-sizing: border-box;
+    color: #fd5f39;
+    font-weight: 700;
+    text-align: right;
+    min-width: 100rpx;
+    padding-left: 10rpx;
+}
+
+.item-other-data {
+    display: flex;
+    align-items: center;
+    margin-top: 30rpx;
+}
+
+.company-type-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 120rpx;
+    height: 50rpx;
+    padding: 0 8rpx;
+    font-size: 24rpx;
+    color: #999;
+    border: 1px solid #f0f0f0;
+    border-radius: 3px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    word-wrap: normal;
+}
+
+.job-publish-time {
+    flex: 1;
+    font-size: 24rpx;
+    color: #a1a1a1;
+    text-align: right;
+}
+
+.company-vip-desc {
+    letter-spacing: 2px;
+    line-height: 50rpx;
+    font-size: 26rpx;
+    margin: 30rpx 0;
+    white-space: pre-wrap;
+    word-break: break-all;
+}
+
+.hrs {
+    border: none;
+    border-bottom: 1px dashed #ccc;
+    height: 1px;
+}
+
+.fast-info {
+    letter-spacing: 2px;
+    line-height: 40rpx;
+    font-size: 26rpx;
+    color: #ccc;
+    margin: 30rpx 0;
+    font-weight: 700;
+    white-space: pre-wrap;
+    word-break: break-all;
+}
+
+.fast-info text {
+    color: #000;
+}
+
+.vip-img-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8rpx;
+}
+
+.vip-img-1 {
+    width: 100%;
+}
+
+.vip-img-2 {
+    margin-right: 4rpx;
+    flex: 1;
+    height: 230rpx;
+    flex-shrink: 0;
+}
+
+.vip-img-3 {
+    margin-left: 4rpx;
+    flex: 1;
+    height: 230rpx;
+    flex-shrink: 0;
+}
+
+.no-job-tips {
+    height: 100rpx;
+    line-height: 100rpx;
+    text-align: center;
+    font-size: 30rpx;
+    color: #000;
+    letter-spacing: 3px;
+}

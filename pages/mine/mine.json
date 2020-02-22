@@ -1,0 +1,7 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "nav-bar": "/component/navbarNew/index",
+    "login-panel": "/component/loginPanel/loginPanel"
+  }
+}

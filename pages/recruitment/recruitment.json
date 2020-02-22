@@ -1,0 +1,13 @@
+{
+  "disableSwipeBack": true,
+  "enablePullDownRefresh": true,
+  "backgroundColor": "#fff",
+  "backgroundTextStyle": "dark",
+  "navigationBarBackgroundColor":"#fff",
+  "navigationBarTitleText":"大小事",
+  "navigationStyle": "default",
+  "backgroundColorTop":"#fff",
+  "usingComponents": {
+    "go-top": "/component/goTop/go-top"
+  }
+}

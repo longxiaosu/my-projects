@@ -1,0 +1,16 @@
+<van-popup show="{{ popUp.show }}" z-index="9999999" position="bottom" bind:close="popClose" overlay-style="{{bgColor}}">
+    <form bindsubmit="shareSubmit" reportSubmit="true">
+        <view wx:if="{{tipStr != ''}}" class="share-tips">{{tipStr}}</view>
+        <view class='share-box'>
+            <button class="share-item" open-type="share" formType="submit"  catchtap='popClose' data-id="6" data-types="{{shareType}}">
+                <image class="friends-img" mode="aspectFit" src="/assets/pngs/friend.png"></image>
+                <view class="shares-text">分享给好友</view>
+            </button>
+            <button class="share-item" catchtap='shares' formType="submit">
+                <image class="friends-img" mode="aspectFit" src="/assets/pngs/chouqian.png"></image>
+                <view class="shares-text">邀請函</view>
+            </button>
+        </view>
+        <view class="cancel-btn" catchtap='popClose'>取消</view>
+    </form>
+</van-popup>

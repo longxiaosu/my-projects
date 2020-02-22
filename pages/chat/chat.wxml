@@ -1,0 +1,29 @@
+<go-top is-show='{{showGoTop}}'></go-top>
+<block wx:for="{{list}}" wx:key="{{index}}">
+  <van-swipe-cell id="{{item.receiverId}}" right-width="{{ 75 }}" left-width="{{ 0.01 }}">
+    <view slot="left" class="left-box"></view>
+    <view class="chat-user" catch:tap="linkToDetail" data-index="{{index}}" data-id="{{item.receiverId}}" bindtouchstart='touchStart' bindtouchend='touchEnd'>
+      <view class="avater-box">
+        <image class="chat-avatar" mode="aspectFill" src='{{item.imgUrl}}'></image>
+        <!-- 未读消息数量 -->
+        <view wx:if="{{item.msgNum > 0}}" class="notice-badge">{{item.msgNum}}</view>
+      </view>
+      <view class="msg-info">
+        <view class="user-title">
+          <view class="user-names">{{item.companyName}}</view>
+          <view class="times">{{item.timeStr}}</view>
+        </view>
+        <view class="msg-text-box">
+          <view class="msg">{{item.msg}}</view>
+        </view>
+      </view>
+    </view>
+    <!-- 删除 -->
+    <view slot="right" class="del-btn" catch:tap="deleteChat" data-index="{{index}}">删除</view>
+  </van-swipe-cell>
+</block>
+    <view class="fill-bottom nomore-text">
+        <text wx:if='{{!hideLoad&&total!=0}}'>{{language.str2}}</text>
+        <text wx:else>{{isBottomRefreshing == true ? language.str1:''}}</text>
+        <text wx:if="{{total == 0}}">{{language.str3}}</text>
+    </view>

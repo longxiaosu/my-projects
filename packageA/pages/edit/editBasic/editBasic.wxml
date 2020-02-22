@@ -1,0 +1,154 @@
+<nav-bar navbar-data='{{nvabarData}}'></nav-bar>
+<view style='height: {{topHeight}}px'></view>
+<form reportSubmit="true" bindsubmit="shareSubmit">
+    <view class="form-input-box">
+        <!-- 中文姓名 -->
+        <view class="form-input-item border-b">
+            <view class="form-input-title">{{language.str22}}</view>
+            <input type='text' cursor-spacing="50" bindchange="bindDateChange" data-name="ruleForm.chineseName" name="chineseName" class="form-input-text" placeholder='{{language.str24}}' value='{{ruleForm.chineseName}}' placeholder-class='place-input'></input>
+            <view class="fill-right"></view>
+        </view>
+        <!-- 外文姓名 -->
+        <view class="form-input-item border-b">
+            <view class="form-input-title">{{language.str23}}</view>
+            <input type='text' cursor-spacing="50" bindchange="bindDateChange" data-name="ruleForm.foreignName" name="foreignName" class="form-input-text" placeholder='{{language.str25}}' value='{{ruleForm.foreignName}}' placeholder-class='place-input'></input>
+            <view class="fill-right"></view>
+        </view>
+        <!-- 慣用稱呼 -->
+        <view class="form-input-item border-b">
+            <view class="form-input-title">{{language.str26}}</view>
+            <input type='text' cursor-spacing="50" bindchange="bindDateChange" data-name="ruleForm.nickname" name="nickname" class="form-input-text" placeholder='{{language.str27}}' value='{{ruleForm.nickname}}' placeholder-class='place-input'></input>
+            <view class="fill-right"></view>
+        </view>
+        <!-- 證件類別 -->
+        <view class="form-input-item border-b">
+            <view class="form-input-title">{{language.str28}}</view>
+            <picker mode="selector" bindchange="bindDateChange" data-name="ruleForm.idType" range-key="name" value="{{ruleForm.idType}}" range="{{idTypes}}" class="form-input-text">
+                <view wx:if="{{ruleForm.idType != ''}}" class="form-input-text eli">
+                    {{idTypes[ruleForm.idType].name}}
+                </view>
+                <view wx:else class="form-input-text eli">{{language.str15}}</view>
+            </picker>
+            <icon class='iconfont icon-you'></icon>
+        </view>
+        <!-- 出生日期 -->
+        <view class="form-input-item border-b">
+            <view class="form-input-title">{{language.str29}}</view>
+            <picker mode="date" bindchange="bindDateChange" end="{{maxDate}}" data-name="ruleForm.birthday" value="{{ruleForm.birthday}}" class="form-input-text">
+                <view wx:if="{{ruleForm.birthday != ''}}" class="form-input-text eli">
+                    {{ruleForm.birthday}}
+                </view>
+                <view wx:else class="form-input-text eli">{{language.str16}}</view>
+            </picker>
+            <icon class='iconfont icon-you'></icon>
+        </view>
+        <!-- 性别 -->
+        <view class="form-input-item border-b">
+            <view class="form-input-title">{{language.str30}}</view>
+            <picker mode="selector" bindchange="bindDateChange" data-name="ruleForm.gender" range-key="name" value="{{ruleForm.gender}}" range="{{genderOptions}}" class="form-input-text">
+                <view class="form-input-text eli">{{genderOptions[ruleForm.gender].name}}</view>
+            </picker>
+            <icon class='iconfont icon-you'></icon>
+        </view>
+        <!-- 身高（厘米） -->
+        <view class="form-input-item border-b">
+            <view class="form-input-title">{{language.str31}}</view>
+            <input type='number' cursor-spacing="50" bindchange="bindDateChange" data-name="ruleForm.height" class="form-input-text" placeholder='{{language.str32}}' value='{{ruleForm.height}}' placeholder-class='place-input'></input>
+            <view class="fill-right"></view>
+        </view>
+        <!-- Wechat ID -->
+        <view class="form-input-item">
+            <view class="form-input-title">{{language.str33}}</view>
+            <input type='text' cursor-spacing="50" bindchange="bindDateChange" data-name="ruleForm.wechatId" name="wechatId" class="form-input-text" placeholder='{{language.str34}}' value='{{ruleForm.wechatId}}' placeholder-class='place-input'></input>
+            <view class="fill-right"></view>
+        </view>
+    </view>
+    <view class="gray-line"></view>
+    <view class="form-input-box bor-b">
+        <!-- 语言 -->
+        <view class="form-input-item">
+            <view class="form-input-title">{{language.str35}}</view>
+        </view>
+        <view wx:for="{{ruleForm.languageSkills}}" wx:key="{{index}}" class="form-input-item">
+            <picker mode="multiSelector" bindchange="bindMultiChange" range-key="label" value="{{item.language}}" range="{{languageOptions}}" data-index="{{index}}" class="form-input-text align-left">
+                <view wx:if="{{item.language.length > 0}}" class="form-input-text align-left eli">
+                    {{languageOptions[0][item.language[0]].label}}/{{languageOptions[1][item.language[1]].label}}
+                </view>
+                <view wx:else class="form-input-text align-left">{{language.str17}}</view>
+            </picker>
+            <icon wx:if="{{index == 0}}" class='iconfont icon-you'></icon>
+            <icon wx:else class='iconfont icon-shanchu' catch:tap="deleteLanguageSkills" data-index="{{index}}"></icon>
+        </view>
+    </view>
+    <!-- 添加一个语言 -->
+    <button class="menu-btn add-item" catch:tap="addLanguageSkills">
+        <icon class='iconfont icon-tianjia'></icon>
+        <text>{{language.str36}}</text>
+    </button>
+    <view class="gray-line"></view>
+    <view class="form-input-box {{ruleForm.phone.length<2?'bor-b':''}}">
+        <!-- 聯絡電話 -->
+        <view class="form-input-item">
+            <view class="form-input-title">{{language.str37}}</view>
+        </view>
+        <view wx:for="{{ruleForm.phone}}" wx:key="{{index}}" class="form-input-item ">
+            <picker mode="selector" bindchange="bindPhoneChange" data-index="{{index}}" range-key="name" value="{{item.area}}" range="{{phoneArea}}" class="form-input-text align-left">
+                <view wx:if="{{item.area != ''}}" class="form-input-text align-left eli">
+                    {{phoneArea[item.area].name}}
+                </view>
+                <view wx:else class="form-input-text align-left eli">{{language.str19}}</view>
+            </picker>
+            <input type='text' cursor-spacing="50" bindchange="bindPhoneDateChange" data-index="{{index}}" class="form-input-text" placeholder='{{language.str20}}' value='{{item.phones}}' placeholder-class='place-input'></input>
+            <icon wx:if="{{index == 0}}" class='iconfont icon-you'></icon>
+            <icon wx:else class='iconfont icon-shanchu' catch:tap="deletePhone" data-index="{{index}}"></icon>
+        </view>
+    </view>
+    <!-- 添加一个聯絡電話 -->
+    <button wx:if="{{ruleForm.phone.length < 2}}" class="menu-btn add-item" catch:tap="addPhone">
+        <icon class='iconfont icon-tianjia'></icon>
+        <text>{{language.str38}}</text>
+    </button>
+    <view class="gray-line"></view>
+    <!-- 理想的工作类别 -->
+    <view class="form-input-box">
+        <view class="form-input-item">
+            <view class="form-input-title">{{language.str39}}</view>
+        </view>
+        <view class="form-input-item" catch:tap="showPopup">
+            <view wx:if="{{ruleForm.jobPositionsStr == ''}}" class="form-input-content">
+                {{language.str21}}
+            </view>
+            <view wx:else class="form-input-content">{{ruleForm.jobPositionsStr}}</view>
+            <icon class='iconfont icon-you'></icon>
+        </view>
+    </view>
+    <view class="gray-line"></view>
+    <!-- <view class="mine-desc">補充資料（如畢業成績）</view>
+    <view class="text-area-box">
+        <textarea name="textarea" cursor-spacing="50" placeholder="{{description == ''?'请输入補充資料...':description}}" value="{{description}}" maxlength="500"></textarea>
+    </view> -->
+    <button class="menu-btn save-btn" formType="submit">
+        <text>{{language.str40}}</text>
+    </button>
+    <view class="fill-bottom"></view>
+</form>
+<!-- 理想的工作类别弹窗 -->
+<van-popup show="{{ popShow }}" position="bottom" round bind:close="onClose" z-index="9000">
+    <view class="jobPosition-box" style='height: {{winHeight}}rpx'>
+        <view class="jobPosition-title">{{language.str39}}</view>
+        <scroll-view scroll-y class="jobPosition-scroll">
+            <view class="checkboxs">
+                <van-checkbox-group value="{{ ruleForm.jobPositions }}" bind:change="onJobPositionsChange">
+                    <van-checkbox wx:for="{{ jobTypes }}" wx:key="index" name="{{ item.id }}" checked-color="#16B38A" custom-class="checkbox-item" label-class="checkbox-label">
+                        {{ item.name }} {{item.englishName}}
+                    </van-checkbox>
+                </van-checkbox-group>
+            </view>
+        </scroll-view>
+        <view class="bottom-btn">
+            <button class="menu-btn select-btn" catch:tap="onClose">
+                <text>{{language.str41}}</text>
+            </button>
+        </view>
+    </view>
+</van-popup>

@@ -1,0 +1,13 @@
+<block wx:if="{{show}}">
+  <view class="background-box" catch:tap="closePopUp" catchtouchmove="preSlide"></view>
+  <view class="login-panel-box">
+    <view class="top-title">
+      {{language.str1}}
+      <icon class='iconfont icon-guanbi1' catch:tap="closePopUp"></icon>
+    </view>
+    <button bindgetuserinfo="userLogin" openType="getUserInfo" class="login-btn">
+      <image mode="aspectFit" src="/assets/pngs/shareIcon.png"></image>
+      <text>{{language.str2}}</text>
+    </button>
+  </view>
+</block>

@@ -1,0 +1,58 @@
+@import "/style/ripples.min.wxss";
+@import "/style/iconfont.wxss";
+
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.hover-btn {
+    background-color: #E5E5E5 !important;
+}
+
+rich-text .rich-img {
+    width: 100% !important;
+    height: auto !important;
+}
+
+.showFade {
+    animation: fadeIn 0.8s 1;
+}
+
+.hideLoad {
+    height: 80rpx;
+    line-height: 80rpx;
+    text-align: center;
+    font-size: 26rpx;
+    color: #959595;
+    background: #fff;
+}
+
+.fill-bottom {
+    height: 100rpx;
+}
+
+.nomore-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #a1a1a1;
+    font-size: 26rpx;
+}
+
+.eli {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.emotions-img {
+    vertical-align:middle;
+    height: 40rpx;
+}

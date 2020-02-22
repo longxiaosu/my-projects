@@ -1,0 +1,114 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": false,
+		"enhance": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"coverView": true,
+		"autoAudits": false,
+		"uglifyFileName": true,
+		"checkInvalidKey": true,
+		"checkSiteMap": false,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.8.3",
+	"appid": "wx58453e587d1cb61a",
+	"projectname": "FastfingJob",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 7,
+			"list": [
+				{
+					"id": -1,
+					"name": "在线简历",
+					"pathName": "packageA/pages/resume/resume",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "个人中心",
+					"pathName": "pages/mine/mine",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "搜索职位",
+					"pathName": "pages/search/search",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 4,
+					"name": "职位详情",
+					"pathName": "packageA/pages/jobDetail/jobDetail",
+					"query": "id=bhx93266467",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "公司详情",
+					"pathName": "packageA/pages/company/company",
+					"query": "id= lcw12625917",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "聊天列表",
+					"pathName": "pages/chat/chat",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "聊天详情",
+					"pathName": "packageA/pages/chatDetail/chatDetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "绑定邮箱帐号",
+					"pathName": "packageA/pages/bindEmail/bindEmail",
+					"query": "",
+					"scene": null
+				}
+			]
+		}
+	}
+}

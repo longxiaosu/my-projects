@@ -1,0 +1,8 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "go-top": "/component/goTop/go-top",
+    "nav-bar": "/component/navbarNew/index"
+  }
+
+}

@@ -1,0 +1,4 @@
+<view class="go-top" hidden="{{!isShow}}" catchtap='goTop'>
+  <icon class='iconfont icon-dingbu'></icon>
+  <text>{{language.str1}}</text>
+</view>

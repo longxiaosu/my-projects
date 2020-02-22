@@ -1,0 +1,38 @@
+<van-action-sheet show="{{ show }}" title="{{language.str1}}" bind:close="onClose" z-index="5000">
+  <view class="apply-job-box">
+    <!-- 选择消息模板 -->
+    <view class="form-input-box bor-b">
+      <view class="form-input-item">
+        <view class="form-input-title">{{language.str2}}</view>
+      </view>
+      <view class="form-input-item">
+        <picker mode="selector" bindchange="bindDataChange" data-name="form.msgId" range-key="name" value="{{form.msgId}}" range="{{msgOptions}}" class="form-input-text align-left">
+          <view class="form-input-text align-left">{{msgOptions[form.msgId].name}}</view>
+        </picker>
+        <icon class='iconfont icon-you'></icon>
+      </view>
+    </view>
+    <!-- 要发送的简历 -->
+    <view class="form-input-box">
+      <view class="form-input-item">
+        <view class="form-input-title">{{language.str3}}</view>
+      </view>
+      <view class="form-input-item">
+        <picker mode="selector" bindchange="bindDataChange" data-name="form.resumeId" range-key="name" value="{{form.resumeId}}" range="{{resumeOption}}" class="form-input-text align-left">
+          <view class="form-input-text align-left aw">{{resumeOption[form.resumeId].name}}</view>
+        </picker>
+        <icon class='iconfont icon-you'></icon>
+      </view>
+    </view>
+    <view style="flex:1"></view>
+    <view class="bottom-btn-box">
+        <button class="menu-btn check-btn cancel-btn" catch:tap="onClose">
+            <text>{{language.str5}}</text>
+        </button>
+        <button class="menu-btn check-btn" catch:tap="submission">
+            <text>{{language.str4}}</text>
+        </button>
+    </view>
+
+  </view>
+</van-action-sheet>

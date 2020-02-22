@@ -1,0 +1,103 @@
+page {
+    background: #F8F8F8;
+}
+
+view {
+    box-sizing: border-box;
+}
+
+.del-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ee0a24;
+    color: #fff;
+    font-size: 28rpx;
+    width: 75px;
+    height: 160rpx;
+    letter-spacing: 1px;
+}
+
+.left-box {
+    width: 0px;
+}
+
+.chat-user {
+    display: flex;
+    background: #fff;
+    padding: 30rpx 25rpx;
+}
+
+.avater-box {
+    position: relative;
+    width: 100rpx;
+    height: 100rpx;
+    flex-shrink: 0;
+}
+
+.chat-avatar {
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 50%;
+}
+
+.notice-badge {
+    position: absolute;
+    background: #FF3B30;
+    font-size: 24rpx;
+    color: #fff;
+    line-height: 24rpx;
+    padding: 4rpx 6rpx;
+    border-radius: 10px;
+    min-width: 40rpx;
+    text-align: center;
+    top: -10rpx;
+    right: -10rpx;
+    z-index: 1000;
+}
+
+.msg-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding-left: 25rpx;
+    justify-content: center;
+}
+
+.user-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 50rpx;
+}
+
+.user-names {
+    font-size: 32rpx;
+    color: #363636;
+    max-width: 500rpx;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.times {
+    font-size: 26rpx;
+    color: #A7A7A7;
+}
+
+.msg-text-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.msg {
+    max-width: 500rpx;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 26rpx;
+    line-height: 48rpx;
+    color: #626262;
+}

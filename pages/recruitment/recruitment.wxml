@@ -1,0 +1,18 @@
+<form reportSubmit="true" bindsubmit="shareSubmit">
+    <button wx:for="{{list}}" wx:key="{{index}}" catch:tap="linkToArticleDetail" data-id="{{item.articleId}}" class="menu-btn job-day-item" formType="submit">
+        <image class="activity-img" mode="widthFix" src='{{item.thumbUrl}}'></image>
+        <text class="job-day-title">{{item.title}}</text>
+        <text class="job-day-content">{{item.summary}}</text>
+        <view class="job-day-bottom">
+            <text>{{item.timeStr}}</text>
+            <icon class='iconfont icon-dingyue'></icon>
+            <icon class='iconfont icon-chuansong'></icon>
+        </view>
+    </button>
+    <view class="fill-bottom nomore-text">
+        <text wx:if='{{!hideLoad&&total!=0}}'>{{language.str2}}</text>
+        <text wx:else>{{isBottomRefreshing == true ? language.str1:''}}</text>
+        <text wx:if="{{total == 0}}">{{language.str3}}</text>
+    </view>
+</form>
+<go-top is-show='{{showGoTop}}'></go-top>
